@@ -1,0 +1,35 @@
+{
+  "name": "Symmetry-Project2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "github": "^9.3.1",
+    "massive": "^3.2.2",
+    "passport": "^0.4.0",
+    "passport-auth0": "^0.6.0",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VincentCastig/Symmetry-Project2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VincentCastig/Symmetry-Project2/issues"
+  },
+  "homepage": "https://github.com/VincentCastig/Symmetry-Project2#readme"
+}
