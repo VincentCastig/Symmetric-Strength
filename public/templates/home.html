@@ -1,4 +1,7 @@
 Make sure to refresh after modifying an item<br>
+<a href='/auth/logout'><button type="button" name="button">logout</button></a>
+template: '<a href="/auth/github">Log in</a>
+<a ui-sref='advanced'><button type="button" name="button">Login</button></a>
 <button ng-click="data()">Get/Refresh items in database</button><br>
 
 
@@ -16,10 +19,12 @@ Make sure to refresh after modifying an item<br>
 <input type="text" placeholder="Description" ng-model="desc">
 <button ng-click="update(id,desc)">Change Description</button><br>
 
-<input type="text" placeholder="ID" ng-model="id2"><button ng-click="delete(id2)">Delete by ID</button>
+
 <div ng-repeat="items in displaySymmetry">
 ID: {{items.productid}}<br>
-Exercise: {{name}}<br>
+Product: {{items.name}}<br>
+Description: {{items.description}}<br>
+Price: ${{items.price}}<br>
 Bench Press: {{ exercises.newBench }}<br>
 Back Squat: {{ exercises.newBackSquat }}<br>
 Front Squat: {{ exercises.newFrontSquat }}<br>
@@ -31,5 +36,8 @@ Bicep Curl: {{ exercises.newBicepCurl }}<br>
 Tricep Curl: {{ exercises.newTricepCurl }}<br>
 Weight: {{items.description}} Lbs<br>
 Repetitions: {{items.price}}<br>
+
 <img ng-src="{{items.imageurl}}">
+</div>
+
 </div>

@@ -1,9 +1,10 @@
 
-angular.module("myApp").service("service", function($http) {
+
+angular.module("myApp").service("currentService", function($http) {
     this.getData = function() {
         return $http({
             method: "GET",
-            url: 'http://localhost:3000/api/goals'
+            url: 'http://localhost:3000/api/exercises'
         }).then(function(response) {
             return response.data;
         })
@@ -11,23 +12,23 @@ angular.module("myApp").service("service", function($http) {
     this.updateData = function(id,desc) {
         return $http({
             method: "PUT",
-            url: 'http://localhost:3000/api/goal/' + id + "?desc=" + desc
+            url: 'http://localhost:3000/api/exercise/' + id + "?desc=" + desc
         })
     }
     this.deleteData = function(id) {
         return $http({
             method: "DELETE",
-            url: 'http://localhost:3000/api/goal/' + id
+            url: 'http://localhost:3000/api/exercises/' + id
         })
     }
     this.addData = function(name,desc,price,img) {
         return $http({
             method: "POST",
-            url: 'http://localhost:3000/api/goal/',
+            url: 'http://localhost:3000/api/exercise/',
             data: {"name" : name, "description" : desc, "price" : price, "imageurl" : img}
         })
     }
-    
+
 
     this.calculator = function(val, name) {
       const exercises = {};
@@ -123,25 +124,5 @@ angular.module("myApp").service("service", function($http) {
         return exercises;
       }
 
-      /*if (name === 'Bench Press') {
-        newFrontSquat = val * 1.090909
-        newBench = val
-        newDeadlift = val * 1.57575758
-        newShoulderPress = val * 0.66666667
-        newInclineBench = val * 0.8181812
-        newPendlayRow = val * 0.8181812
-        newBicepCurl = val * 0.5
-        newTricepCurl = val * 0.5
-      }
-      else if (name === 'Deadlift') {
-        newFrontSquat = val * 0.69230769
-        newBench = val * 0.63461538
-        newDeadlift = val
-        newShoulderPress = val * 0.42307692
-        newInclineBench = val * 0.51923077
-        newPendlayRow = val * 0.51923077
-        newBicepCurl = val * 0.31730769
-        newTricepCurl = val * 0.31730769
-      } */
 
 })

@@ -9,19 +9,19 @@
   <p></p>
 </div>
 
-<form class="" action="index.html" method="post" ng-submit="register()">
+<form class="" action="index.html" method="post" >
   <div class="">
-    <label for="username">Username</label>
-    <input type="username" name="" value="" placeholder="Username">
+    <label for="">Username</label>
+    <input type="text" name="" value="" placeholder="Username" ng-model="username">
   </div>
   <div class="">
-    <label for="password">Password</label>
-    <input type="password" name="" value="" placeholder="Password">
+    <label for="">Password</label>
+    <input type="text" name="" value="" placeholder="Password" ng-model="password">
   </div>
   <div class="">
-    <label for="confirm-password">Password</label>
-    <input type="password" name="" value="" placeholder="Confirm Password">
+    <label for="">Confirm Password</label>
+    <input type="text" name="" value="" placeholder="Confirm Password" ng-model="confirmPassword">
   </div>
 </form>
 
-<a ui-sref='login'><button type="submit" name="button">Register</button></a>
+<button ng-click="register(username, password, confirmPassword)">Register</button>

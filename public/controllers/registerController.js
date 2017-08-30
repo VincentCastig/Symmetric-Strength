@@ -1,9 +1,8 @@
-angular.module('myApp').controller('registerController', function(service, $scope) {
+angular.module('myApp').controller('registerController', function(registerService, $scope) {
 
-  $scope.register = function(obj) {
-    service.register(obj).then(function(response){
-      console.log(response)
-      $scope.user = response
-    })
+  $scope.register = function(username, password, confirmpassword) {
+    console.log('registerController and username is : ')
+    registerService.register(username, password, confirmpassword)
   }
+
 })

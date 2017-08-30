@@ -13,10 +13,15 @@ angular.module("myApp", ['ui.router'])
         templateUrl: './templates/register.html',
         controller: 'registerController'
       })
+      .state('advanced', {
+        url: '/advanced',
+        templateUrl: './templates/advanced.html',
+        controller: ['goalController', 'currentController']
+      })
       .state('home', {
         url: '/home',
         templateUrl: './templates/home.html',
-        controller: 'controller'
+        controller: 'goalController'
       })
 
 

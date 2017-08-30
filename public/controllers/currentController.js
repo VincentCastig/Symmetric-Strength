@@ -1,20 +1,22 @@
-angular.module("myApp").controller('controller', function(service, $scope) {
+angular.module("myApp").controller('currentController', function(currentService, $scope) {
     $scope.data = function() {
-        service.getData().then(function(response) {
+        currentService.getData().then(function(response) {
+          console.log("controller.js - displaySymmetry")
         $scope.displaySymmetry = response;
+
         });
     }
     $scope.update = function(id,desc) {
-        service.updateData(id,desc)
+        currentService.updateData(id,desc)
     }
     $scope.delete = function(id) {
-        service.deleteData(id)
+        currentService.deleteData(id)
     }
     $scope.add = function(name,desc,price,img) {
-        service.addData(name,desc,price,img)
+        currentService.addData(name,desc,price,img)
     }
     $scope.calculator = function(val, name) {
-      $scope.exercises = service.calculator(val,name)
+      $scope.exercises = currentService.calculator(val,name)
 
     }
 

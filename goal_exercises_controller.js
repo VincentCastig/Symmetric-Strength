@@ -1,9 +1,12 @@
 module.exports = {
   create: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
-    const { name, description, price, imageurl } = req.body;
+    console.log("Vincent is accessing the create method in products_controller.js")
 
-    dbInstance.create_product([ name, description, price, imageurl ])
+    const { frontsquat, backsquat, pendlayrow, deadLift, ShoulderPress, inclineBench, benchPress, bicepcurl, tricepCurl, reps } = req.body;
+
+
+    dbInstance.create_goal_exercises([ new date() ])
 
       .then( () => res.status(200).send(req.body) )
       .catch( () => res.status(500).send(req.body) );
@@ -30,7 +33,7 @@ module.exports = {
     const dbInstance = req.app.get('db');
     const { params, query } = req;
 
-    dbInstance.update_product([ params.id, query.desc ])
+    dbInstance.update_goal_exercises([ params.id, frontsquat, backsquat, pendlayrow, deadLift, ShoulderPress, inclineBench, benchPress, bicepcurl, tricepCurl, reps  ])
       .then( () => res.status(200).send() )
       .catch( () => res.status(500).send() );
   },
