@@ -3,10 +3,10 @@ module.exports = {
     const dbInstance = req.app.get('db');
     console.log("Vincent is accessing the create method in products_controller.js")
 
-    const { frontsquat, backsquat, pendlayrow, deadLift, ShoulderPress, inclineBench, benchPress, bicepcurl, tricepCurl, reps } = req.body;
+    const { username } = req.body;
 
 
-    dbInstance.create_goal_exercises([ new date() ])
+    dbInstance.create_goal_exercises([ new date(), username ])
 
       .then( () => res.status(200).send(req.body) )
       .catch( () => res.status(500).send(req.body) );

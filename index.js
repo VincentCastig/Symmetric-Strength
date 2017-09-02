@@ -12,6 +12,7 @@ const goal_exercises_controller = require('./goal_exercises_controller')
 const user_controller = require('./user_controller')
 const path = require('path');
 
+
 const app = module.exports = express()
 
 //app.use means we are using some middleware
@@ -27,29 +28,24 @@ const db = app.get('db')
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-/*app.get('/auth/logout', function(req, res) {
-  req.logout();
-  res.redirect('/');
-})*/
-
-
 app.post('/api/exercise', current_exercises_controller.create)
 app.get('/api/exercises', current_exercises_controller.getAll)
 app.get('/api/exercise/:id', current_exercises_controller.getOne)
 app.put('/api/exercise/:id', current_exercises_controller.update)
 app.delete('/api/exercise/:id', current_exercises_controller.delete)
 
-
+//post exercise goal on registration
 app.post('/api/goal', goal_exercises_controller.create)
 app.get('/api/goals', goal_exercises_controller.getAll)
 app.get('/api/goal/:id', goal_exercises_controller.getOne)
 app.put('/api/goal/:id', goal_exercises_controller.update)
 app.delete('/api/goal/:id', goal_exercises_controller.delete)
 
-
+//register user
 app.post('/api/user', user_controller.create)
 app.get('/api/users', user_controller.getAll)
-app.get('/api/user/:id', user_controller.getOne)
+//login user and find user by username
+app.get('/api/user/:username/:password', user_controller.getUser)
 
 
 app.listen(port, ()=> {

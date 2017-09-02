@@ -16,7 +16,9 @@
     "request": "^2.81.0"
   },
   "devDependencies": {
-    "eslint": "^4.5.0"
+    "eslint": "^4.5.0",
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.3.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

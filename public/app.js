@@ -4,24 +4,25 @@ angular.module("myApp", ['ui.router'])
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-      .state('login', {
-        url: '/',
-        templateUrl: './templates/login.html'
-      })
       .state('register', {
-        url: '/register',
+        url: '/',
         templateUrl: './templates/register.html',
-        controller: 'registerController'
+        controller: 'userController'
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: './templates/login.html',
+        controller: 'userController'
       })
       .state('advanced', {
         url: '/advanced',
         templateUrl: './templates/advanced.html',
-        controller: ['goalController', 'currentController']
+        controller: 'advancedController'
       })
-      .state('home', {
-        url: '/home',
-        templateUrl: './templates/home.html',
-        controller: 'goalController'
+      .state('basic', {
+        url: '/basic',
+        templateUrl: './templates/basic.html',
+        controller: 'basicController'
       })
 
 

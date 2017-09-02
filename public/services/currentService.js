@@ -1,5 +1,3 @@
-
-
 angular.module("myApp").service("currentService", function($http) {
     this.getData = function() {
         return $http({
@@ -9,10 +7,11 @@ angular.module("myApp").service("currentService", function($http) {
             return response.data;
         })
     }
-    this.updateData = function(id,desc) {
+    this.updateData = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress,
+     inclinebench, bench, bicepcurl, tricepcurl) {
         return $http({
             method: "PUT",
-            url: 'http://localhost:3000/api/exercise/' + id + "?desc=" + desc
+            url: 'http://localhost:3000/api/exercise/' + frontsquat
         })
     }
     this.deleteData = function(id) {

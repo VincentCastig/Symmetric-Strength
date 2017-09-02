@@ -3,11 +3,17 @@
 </div>
 
 
-<button ng-click="addUser(username,password)">Add Item</button><br>
 
-<form class="" action="index.html" method="post">
-  <div class="">
-    <label for=""></label>
-    <input type="text" name="" value="">
-  </div>
-</form>
+<div class="container">
+  <form class="form-signin" action="index.html" method="post" >
+    <div class="">
+      <label for="">Username</label>
+      <input type="text" class="form-control" name="" value="" placeholder="Username"  ng-model="username" required>
+    </div>
+    <div class="">
+      <label for="">Password</label>
+      <input type="text" class="form-control" name="" value="" placeholder="Password" ng-model="password" required>
+    </div>
+    <button class="btn btn-lg"ng-click="login(username, password)">Login</button>
+</div>
+  <a href="/auth/github">Auth Log in</a>

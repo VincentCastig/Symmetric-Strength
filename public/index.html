@@ -5,27 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fitness-App</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="css/app.css">
 </head>
-<body ng-controller="goalController">
+<body ng-controller="basicController">
+
   <header>
-    <div class="">
-
-    </div>
-    <nav>
-
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>Basic</li>
+            <li>Advanced</li>
+            <li>Login</li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
+
     <ui-view></ui-view>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
 <script src="app.js"></script>
-<script src="controllers/currentController.js"></script>
-<script src="controllers/registerController.js"></script>
-<script src="controllers/goalController.js"></script>
+<script src="controllers/advancedController.js"></script>
+<script src="controllers/basicController.js"></script>
+<script src="controllers/userController.js"></script>
+<script src="services/basicService.js"></script>
 <script src="services/currentService.js"></script>
-<script src="services/registerService.js"></script>
-<script src="services/service.js"></script>
+<script src="services/goalService.js"></script>
+<script src="services/userService.js"></script>
 </html>

@@ -9,19 +9,20 @@
   <p></p>
 </div>
 
-<form class="" action="index.html" method="post" >
+<form class="form-signin" action="index.html" method="post" >
+  <h2 class="form-signin-heading">Sign In</h2>
   <div class="">
     <label for="">Username</label>
-    <input type="text" name="" value="" placeholder="Username" ng-model="username">
+    <input type="text" name="" value="" placeholder="Username"  ng-model="username" required>
   </div>
   <div class="">
     <label for="">Password</label>
-    <input type="text" name="" value="" placeholder="Password" ng-model="password">
+    <input type="text" name="" value="" placeholder="Password" ng-model="password" required>
   </div>
   <div class="">
     <label for="">Confirm Password</label>
-    <input type="text" name="" value="" placeholder="Confirm Password" ng-model="confirmPassword">
+    <input type="text" name="" value="" placeholder="Confirm Password" ng-model="confirmPassword" required>
   </div>
 </form>
 
-<button ng-click="register(username, password, confirmPassword)">Register</button>
+<button ng-click="register(username, password, confirmPassword); addGoalData(username)">Register</button>
