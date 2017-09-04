@@ -5,7 +5,7 @@ angular.module("myApp", ['ui.router'])
 
     $stateProvider
       .state('register', {
-        url: '/',
+        url: '/register',
         templateUrl: './templates/register.html',
         controller: 'userController'
       })
@@ -14,15 +14,29 @@ angular.module("myApp", ['ui.router'])
         templateUrl: './templates/login.html',
         controller: 'userController'
       })
+      .state('logout', {
+        url: '/',
+        templateUrl: './templates/register.html',
+        controller: 'userController'
+      })
       .state('advanced', {
         url: '/advanced',
         templateUrl: './templates/advanced.html',
+        controller: 'advancedController'
+      })
+      .state('log', {
+        url: '/log',
+        templateUrl: './templates/log.html',
         controller: 'advancedController'
       })
       .state('basic', {
         url: '/basic',
         templateUrl: './templates/basic.html',
         controller: 'basicController'
+      })
+      .state('about', {
+        url: '/about',
+        templateUrl: './templates/about.html'
       })
 
 

@@ -1,29 +1,32 @@
-angular.module('myApp').controller('userController', function(userService, $scope) {
+angular.module('myApp').controller('userController', function(userService, $scope, $state) {
 
 
   $scope.register = function(username, password, confirmpassword) {
-    console.log('registerController and username is : ' + username)
+    console.log('userController and username is : ' + username)
     userService.register(username, password, confirmpassword)
     .then(function (response) {
-      if (response.status == 200) {
-        console.log('signedup', response);
-        $state.go('login')
-      }
+            console.log("scope.register")
+            console.log(response)
     })
   }
   $scope.addGoalData = function(username) {
+    console.log("addGoalData " + username )
       userService.addGoalData(username)
+      .then(function (response) {
+              console.log("scope.addGoalData")
+              console.log(response)
+      })
+      $state.go('login')
   }
 
   $scope.login = function(username, password) {
-    console.log('registerController and username is : ' + username)
+    console.log('loginController and username is : ' + username)
+    console.log('loginController and password is : ' + password)
     userService.login(username, password)
     .then(function (response) {
-      if (response.status == 200) {
+      console.log(response)
         console.log('login', response);
-        $scope.username = response;
         $state.go('basic')
-      }
     })
   }
 

@@ -1,1 +1,2 @@
-INSERT INTO goalExercises ( date, userid ) VALUES ( $1, $2 );
+INSERT INTO goalExercises ( userid ) VALUES ( $1 );
+SELECT * FROM goalExercises;

@@ -1,7 +1,7 @@
 Make sure to refresh after modifying an item<br>
 //tie it in together. use current formula
 //update how much you can lift
-<button ng-click="goalData()">Get/Refresh items in database</button><br>
+<button ng-click="getGoalData()">Get/Refresh items in database</button><br>
 
 How much can you lift in a particular exercise
 <select ng-model="targetExercise" ng-options="x for x in vehicles">
@@ -55,16 +55,9 @@ How much can you lift in the following exercises
 <input type="text" min="1" max="2000" placeholder="Weight" ng-model="tricepCurl">
 <button ng-click="calculator(tricepCurl, 'newTricepCurl')">Tricep Curl</button><br>
 
-<div ng-repeat="items in displayCurrentSymmetry">
-
-</div>
-
-<div ng-repeat="items in displaySymmetry">
-ID: {{items.productid}}<br>
-Product: {{items.name}}<br>
-Description: {{items.description}}<br>
-Price: ${{items.price}}<br>
-Bench Press: {{ exercises.newBench }}<br>
+<div ng-repeat="exercises in displayGoalSymmetry">
+ID: {{exercises.id}}<br>
+Bench Press: {{ exercises.frontSquat }}<br>
 Back Squat: {{ exercises.newBackSquat }}<br>
 Front Squat: {{ exercises.newFrontSquat }}<br>
 Deadlift: {{ exercises.newDeadlift }}<br>
@@ -73,8 +66,21 @@ Incline Bench Press: {{ exercises.newInclineBench }}<br>
 Pendlay Row: {{ exercises.newPendlayRow }}<br>
 Bicep Curl: {{ exercises.newBicepCurl }}<br>
 Tricep Curl: {{ exercises.newTricepCurl }}<br>
-Weight: {{items.description}} Lbs<br>
-Repetitions: {{items.price}}<br>
+Date: {{exercises.date}} Lbs<br>
+Time: {{exercises.time}}<br>
+</div>
 
-<img ng-src="{{items.imageurl}}">
+<div ng-repeat="items in displayCurrentSymmetry">
+  ID: {{items.id}}<br>
+  Bench Press: {{ exercises.newBench }}<br>
+  Back Squat: {{ exercises.newBackSquat }}<br>
+  Front Squat: {{ exercises.newFrontSquat }}<br>
+  Deadlift: {{ exercises.newDeadlift }}<br>
+  Shoulder Press: {{ exercises.newShoulderPress }}<br>
+  Incline Bench Press: {{ exercises.newInclineBench }}<br>
+  Pendlay Row: {{ exercises.newPendlayRow }}<br>
+  Bicep Curl: {{ exercises.newBicepCurl }}<br>
+  Tricep Curl: {{ exercises.newTricepCurl }}<br>
+  Weight: {{items.description}} Lbs<br>
+  Repetitions: {{items.price}}<br>
 </div>

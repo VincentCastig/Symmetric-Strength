@@ -1,14 +1,14 @@
 module.exports = {
   create: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
-    console.log("Vincent is accessing the create method in products_controller.js")
+    console.log("Vincent is accessing the create method in current_controller.js")
 
-    const { name, description, price, imageurl } = req.body;
+    const { frontSquat, backSquat, pendlayRow, deadLift, shoulderPress, inclineBench, benchPress, bicepCurl, tricepCurl, reps, userid } = req.body;
 
 
-    dbInstance.create_exercises([ new date() ])
+    dbInstance.create_exercises([ frontSquat, backSquat, pendlayRow, deadLift, shoulderPress, inclineBench, benchPress, bicepCurl, tricepCurl, reps, userid ])
 
-      .then( () => res.status(200).send(req.body) )
+      .then( (response) => res.status(200).send(response) )
       .catch( () => res.status(500).send(req.body) );
   },
 
@@ -16,8 +16,8 @@ module.exports = {
     const dbInstance = req.app.get('db');
     const { params } = req;
 
-    dbInstance.read_exercise([ params.id ])
-      .then( product => res.status(200).send( product ) )
+    dbInstance.read_exercise([ params.username ])
+      .then( response => res.status(200).send( response ) )
       .catch( () => res.status(500).send() );
   },
 
@@ -25,7 +25,7 @@ module.exports = {
     const dbInstance = req.app.get('db');
 
     dbInstance.read_exercises()
-      .then( products => res.status(200).send( products ) )
+      .then( response => res.status(200).send( response ) )
       .catch( () => res.status(500).send() );
   },
 

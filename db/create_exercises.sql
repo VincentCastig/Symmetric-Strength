@@ -1,1 +1,2 @@
-INSERT INTO currentExercises ( date ) VALUES ( $1, $2, $3, $4, $5, $6, $7, $8, $9, $10 );
+INSERT INTO currentexercises ( frontSquat, backSquat, pendlayRow, deadLift, shoulderPress, inclineBench, benchPress, bicepCurl, tricepCurl, reps, userid ) VALUES ( $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11 );
+SELECT * FROM currentExercises;

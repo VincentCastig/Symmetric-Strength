@@ -7,21 +7,22 @@
     <title>Fitness-App</title>
     <link rel="stylesheet" href="css/app.css">
 </head>
-<body ng-controller="basicController">
-
-  <header>
+<body ng-controller="userController" cz-shortcut-listen="true" class="vsc-initialized">
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div id="navbar" class="navbar-collapse collapse">
+      <div class="container">
+        <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li>Basic</li>
-            <li>Advanced</li>
-            <li>Login</li>
+            <li><a ui-sref="basic">Basic</a></li>
+            <li><a ui-sref="log">Workout-Log</a></li>
+            <li><a ui-sref="advanced">Advanced</a></li>
+            <li><a ui-sref="about">About</a></li>
+            <li><a ui-sref="login">Login</a></li>
+            <li><a ui-sref="logout">Logout</a></li>
+            <li>{{username}}</li>
           </ul>
         </div>
       </div>
     </nav>
-  </header>
 
     <ui-view></ui-view>
 </body>

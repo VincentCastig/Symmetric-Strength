@@ -5,22 +5,23 @@ module.exports = {
     const dbInstance = req.app.get('db');
     const { username, password } = req.body
 
-console.log("user_controller")
-console.log(password)
+// console.log(username)
+// console.log(password)
 
     dbInstance.create_user([ username, password ])
 
-      .then( () => {
-        res.status(200).send(req.body);
+      .then( (response) => {
+        res.status(200).send(response);
     })
-      .catch( () => res.status(500).send(req.body) );
+      .catch( () => res.status(500).send() );
   },
 
   getUser: ( req, res, next ) => {
+    console.log('user_controller.js getuser')
     const dbInstance = req.app.get('db');
-    const { username, password } = req.body
-
-    dbInstance.getUserById([ username, password ])
+    const { params } = req
+    console.log(params)
+    dbInstance.getUserById([ params.username, params.password ])
       .then( (username) => {
         res.status(200).send( username )
     })
@@ -29,7 +30,6 @@ console.log(password)
 
   getAll: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
-
     dbInstance.read_users()
       .then( usernames => res.status(200).send( usernames ) )
       .catch( () => res.status(500).send() );

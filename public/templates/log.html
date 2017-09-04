@@ -1,0 +1,110 @@
+<div class="jumbotron">
+  <div class="container">
+    <img src="images/dist/images/noun_30259_cc.png" width="200" height="200"alt="">
+    <h1 class="">Workout Log</h1>
+  </div>
+</div>
+<button ng-click="getCurrentData()">Get/Refresh items in database</button><br>
+
+
+    <select ng-model="name" ng-options="x for x in vehicles">
+    </select>
+    <button ng-click="add(name,description,price,img)">Add Item</button><br>
+
+    <input type="text" placeholder="ID" ng-model="id2"><button ng-click="delete(id2)">Delete by ID</button>
+
+    <div class="row">
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">Workout Log</h1>
+        <div class="row placeholders">
+          <div class="col-xs-3 col-sm-3 placeholder">
+          </div>
+
+        </div>
+        <h2 class="sub-header">List</h2>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Reps</th>
+                <th>Deadlift</th>
+                <th>Pendlay Row</th>
+                <th>Back Squat</th>
+                <th>Front Squat</th>
+                <th>Bench Press</th>
+                <th>Incline Press</th>
+                <th>Shoulder Press</th>
+                <th>Bicep Curl</th>
+                <th>Tricep Curl</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th><input type="number" min="1" max="2000" placeholder="" ng-model="weight"></th>
+                <th><input type="number" min="1" max="2000" placeholder="" ng-model="weight"></th>
+                <th><input type="number" min="1" max="2000" placeholder="" ng-model="weight"></th>
+                <th><input type="number" min="1" max="2000" placeholder="" ng-model="weight"></th>
+                <th><input type="number" min="1" max="2000" placeholder="" ng-model="weight"></th>
+                <th><input type="number" min="1" max="2000" placeholder="" ng-model="weight"></th>
+                <th><input type="number" min="1" max="2000" placeholder="" ng-model="weight"></th>
+                <th><input type="number" min="1" max="2000" placeholder="" ng-model="weight"></th>
+                <th><input type="number" min="1" max="2000" placeholder="" ng-model="weight"></th>
+                <th><input type="number" min="1" max="2000" placeholder="" ng-model="weight"></th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">Workout Log</h1>
+        <div class="row placeholders">
+          <div class="col-xs-3 col-sm-3 placeholder">
+          </div>
+
+        </div>
+        <h2 class="sub-header">List</h2>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Reps</th>
+                <th>Deadlift</th>
+                <th>Pendlay Row</th>
+                <th>Back Squat</th>
+                <th>Front Squat</th>
+                <th>Bench Press</th>
+                <th>Incline Press</th>
+                <th>Shoulder Press</th>
+                <th>Bicep Curl</th>
+                <th>Tricep Curl</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="items in displayCurrent | orderBy: '-date'"
+              ng-show="(($index < (displayCurrent.page * displayCurrent.numRecords))
+              && ($index >= ((displayCurrent.page - 1) * displayCurrent.numRecords)))">
+                <th>{{items.date | date: 'longDate'}}</th>
+                <th>{{items.date | date: 'shortTime'}}</th>
+                <th>{{items.reps}}</th>
+                <th>{{items.deadlift}}</th>
+                <th>{{items.pendlayrow}}</th>
+                <th>{{items.backsquat}}</th>
+                <th>{{items.frontsquat}}</th>
+                <th>{{items.benchpress}}</th>
+                <th>{{items.inclinebench}}</th>
+                <th>{{items.shoulderpress}}</th>
+                <th>{{items.bicepcurl}}</th>
+                <th>{{items.tricepcurl}}</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div><button ng-click="next()">Next 15</button></div>
+        <div><button ng-click="back()">Prev 15</button></div>
+      </div>
+    </div>

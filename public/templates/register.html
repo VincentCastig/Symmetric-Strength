@@ -5,24 +5,16 @@
 <div class="">
   <p></p>
 </div>
-<div class="">
-  <p></p>
-</div>
 
-<form class="form-signin" action="index.html" method="post" >
-  <h2 class="form-signin-heading">Sign In</h2>
-  <div class="">
-    <label for="">Username</label>
-    <input type="text" name="" value="" placeholder="Username"  ng-model="username" required>
-  </div>
-  <div class="">
-    <label for="">Password</label>
-    <input type="text" name="" value="" placeholder="Password" ng-model="password" required>
-  </div>
-  <div class="">
-    <label for="">Confirm Password</label>
-    <input type="text" name="" value="" placeholder="Confirm Password" ng-model="confirmPassword" required>
-  </div>
+<div class="container">
+  <form class="form-signin" action="index.html" method="post" >
+    <h2 class="form-signin-heading">Sign In</h2>
+      <label for="">Username</label>
+      <input type="text" class="form-control" name="" value="" placeholder="Username"  ng-model="username" required>
+      <label for="">Password</label>
+      <input type="text" class="form-control" name="" value="" placeholder="Password" ng-model="password" required>
+      <label for="">Confirm Password</label>
+      <input type="text" class="form-control" name="" value="" placeholder="Confirm Password" ng-model="confirmPassword" required>
 </form>
 
-<button ng-click="register(username, password, confirmPassword); addGoalData(username)">Register</button>
+<button class="btn btn-lg btn-primary" ng-click="register(username, password, confirmPassword); addGoalData(username)">Register</button>

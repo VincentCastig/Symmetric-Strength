@@ -1,10 +1,22 @@
 angular.module("myApp").service("currentService", function($http) {
-    this.getData = function() {
+    this.getCurrentData = function() {
         return $http({
             method: "GET",
             url: 'http://localhost:3000/api/exercises'
         }).then(function(response) {
-            return response.data;
+            response.data.numRecords = 5;
+            response.data.page = 1;
+            response.data.next = function(){
+              if(response.data.length/5 >= response.data.page ) {
+              response.data.page = response.data.page + 1;
+              }
+            };
+            response.data.back = function(){
+              if(response.data.page > 1) {
+              response.data.page = response.data.page - 1;
+              }
+            }
+        return response.data;
         })
     }
     this.updateData = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress,

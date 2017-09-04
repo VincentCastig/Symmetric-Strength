@@ -1,1 +1,2 @@
-INSERT INTO user ( username, password ) VALUES ( $1, $2 );
+INSERT INTO users (username, password) VALUES($1,$2);
+SELECT * FROM users;

@@ -8,7 +8,7 @@ $bootstrap-sass-asset-helper: false !default;
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$gray-base:              #e1c16a !default;
+$gray-base:              #ec8d1b !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              lighten($gray-base, 20%) !default;   // #333
 $gray:                   lighten($gray-base, 33.5%) !default; // #555
@@ -191,7 +191,7 @@ $input-bg:                       #fff !default;
 $input-bg-disabled:              $gray-lighter !default;
 
 //** Text color for `<input>`s
-$input-color:                    $gray !default;
+$input-color:                    #000 !default;
 //** `<input>` border color
 $input-border:                   #ccc !default;
 
@@ -492,7 +492,7 @@ $pager-disabled-color:                 $pagination-disabled-color !default;
 $jumbotron-padding:              30px !default;
 $jumbotron-color:                inherit !default;
 $jumbotron-bg:                   $gray-base !default;
-$jumbotron-heading-color:        inherit !default;
+$jumbotron-heading-color:        #000;
 $jumbotron-font-size:            ceil(($font-size-base * 1.5)) !default;
 $jumbotron-heading-font-size:    ceil(($font-size-base * 4.5)) !default;
 

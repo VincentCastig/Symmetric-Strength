@@ -1,15 +1,15 @@
 module.exports = {
   create: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
-    console.log("Vincent is accessing the create method in products_controller.js")
+    console.log("Vincent is accessing the create method in goal_exercises_controller.js")
 
     const { username } = req.body;
+    console.log(username)
 
+    dbInstance.create_goal_exercises([ username ])
 
-    dbInstance.create_goal_exercises([ new date(), username ])
-
-      .then( () => res.status(200).send(req.body) )
-      .catch( () => res.status(500).send(req.body) );
+      .then( (response) => res.status(200).send(response) )
+      .catch( () => res.status(500).send() );
   },
 
   getOne: ( req, res, next ) => {

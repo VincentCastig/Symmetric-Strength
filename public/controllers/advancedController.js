@@ -26,26 +26,30 @@ angular.module("myApp").controller('advancedController', function(goalService, c
     $scope.vehicles = ["Bench Press", "Deadlift", "Squat", "Barbell Bicep Curl", "Tricep EZ-Bar Curl", "Shoulder Barbell Press"];
     $scope.repetitions = [5,6,7,8,9,10];
 
-    $scope.currentData = function() {
-        advancedService.getdata().then(function(response) {
-          console.log("controller.js - displaySymmetry")
-        $scope.displayCurrentSymmetry = response;
-          console.log(response)
-        });
-    }
+    $scope.getCurrentData = function() {
+        currentService.getCurrentData().then(function(response) {
+          console.log(response.length)
+        $scope.displayCurrent = response;
+
+        $scope.next = response.next;
+        $scope.back = response.back;
+      })
+
+        };
+
     $scope.currentUpdate = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress,
      inclinebench, bench, bicepcurl, tricepcurl) {
-        advancedService.updateData(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress,
+        currentService.updateData(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress,
          inclinebench, bench, bicepcurl, tricepcurl)
     }
     $scope.currentDelete = function(id) {
-        advancedService.deleteData(id)
+        currentService.deleteData(id)
     }
     $scope.currentAdd = function(name,desc,price,img) {
-        advancedService.addData(name,desc,price,img)
+        currentService.addData(name,desc,price,img)
     }
     $scope.currentCalculator = function(val, name) {
-      $scope.currentExercises = advancedService.calculator(val,name)
+      $scope.currentExercises = currentService.calculator(val,name)
 
     }
 
@@ -60,10 +64,10 @@ angular.module("myApp").controller('advancedController', function(goalService, c
         });
     }
 
-      $scope.goalData = function() {
+      $scope.getGoalData = function() {
           goalService.getGoalData().then(function(response) {
 
-          $scope.displaySymmetry = response;
+          $scope.displayGoalSymmetry = response;
           console.log(response)
 
           });
