@@ -1071,7 +1071,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
-  color: #f4bc79;
+  color: #000;
   background-color: #fff; }
 
 input,
@@ -2460,12 +2460,12 @@ output {
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
   .form-control::-moz-placeholder {
-    color: #999;
+    color: #000;
     opacity: 1; }
   .form-control:-ms-input-placeholder {
-    color: #999; }
+    color: #000; }
   .form-control::-webkit-input-placeholder {
-    color: #999; }
+    color: #000; }
   .form-control::-ms-expand {
     border: 0;
     background-color: transparent; }
@@ -2794,7 +2794,7 @@ select[multiple].input-lg,
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #fef7ef; }
+  color: #404040; }
 
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -4208,7 +4208,7 @@ tbody.collapse.in {
   font-size: 75%;
   font-weight: bold;
   line-height: 1;
-  color: #fff;
+  color: #000;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
@@ -4342,7 +4342,7 @@ a.badge:hover, a.badge:focus {
     margin-right: auto; }
   .thumbnail .caption {
     padding: 9px;
-    color: #f4bc79; }
+    color: #000; }
 
 a.thumbnail:hover,
 a.thumbnail:focus,

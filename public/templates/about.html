@@ -14,3 +14,18 @@ icon created by Budi Hartono from Noun Project
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<div ng-repeat="exercises in displayGoalSymmetry">
+ID: {{exercises.id}}<br>
+Bench Press: {{ exercises.frontSquat }}<br>
+Back Squat: {{ exercises.newBackSquat }}<br>
+Front Squat: {{ exercises.newFrontSquat }}<br>
+Deadlift: {{ exercises.newDeadlift }}<br>
+Shoulder Press: {{ exercises.newShoulderPress }}<br>
+Incline Bench Press: {{ exercises.newInclineBench }}<br>
+Pendlay Row: {{ exercises.newPendlayRow }}<br>
+Bicep Curl: {{ exercises.newBicepCurl }}<br>
+Tricep Curl: {{ exercises.newTricepCurl }}<br>
+Date: {{exercises.date}} Lbs<br>
+Time: {{exercises.time}}<br>
+</div>

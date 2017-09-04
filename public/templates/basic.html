@@ -2,28 +2,24 @@
   <div class="container">
     <img src="images/dist/images/noun_30259_cc.png" width="200" height="200"alt="">
     <h1 class="">Vintruv</h1>
-    <h1>User: {{username}}</h1>
   </div>
 </div>
 
-Make sure to refresh after modifying an item<br>
-
-<a ui-sref='advanced'><button type="button" name="button">Advanced</button></a>
-
-
-
-<select ng-model="exerciseName" ng-options="x for x in vehicles">
-  <option value="" disabled selected>Select Your Exercise</option>
-</select>
-
-<input type="number" min="1" max="2000" placeholder="Weight" ng-model="weight">
-
-<select ng-model="unitMeasurement" name="Unit" ng-options="x for x in units">
-  <option value="" disabled selected>Select Your Unit</option>
-</select>
-<select ng-model="reps" name="Repetitions" ng-options="x for x in repetitions">
-  <option value="" disabled selected>Select Your Repetitions</option>
-</select>
+<div class="container">
+  <form class="form-signin" action="index.html" method="post">
+    <h2 class="form-signin-heading">Calculate Your Ideal Strengths</h2>
+    <select ng-model="exerciseName" ng-options="x for x in vehicles">
+      <option value="" disabled selected>Select Your Exercise</option>
+    </select>
+    <input type="number" min="1" max="2000" placeholder="Weight" ng-model="weight">
+    <select ng-model="unitMeasurement" name="Unit" ng-options="x for x in units">
+      <option value="" disabled selected>Select Your Unit</option>
+    </select>
+    <select ng-model="reps" name="Repetitions" ng-options="x for x in repetitions">
+      <option value="" disabled selected>Select Your Repetitions</option>
+    </select>
+  </form>
+</div>
 
 
 
@@ -61,22 +57,22 @@ Make sure to refresh after modifying an item<br>
         <span class="text-muted">Something</span>
       </div>
       <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="images/inclinebench.png" width="200" height="200" class="img-respomsive" alt="placeholder">
+        <img src="images/inclineBenchCopy.png" width="200" height="200" class="img-respomsive" alt="placeholder">
         <h4>Incline Bench Press: {{ exercises.newInclineBench }}</h4>
         <span class="text-muted">Something</span>
       </div>
       <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="images/barbellpressCopy.png" width="200" height="200" class="img-respomsive" alt="placeholder">
+        <img src="images/barbellpress.png" width="200" height="200" class="img-respomsive" alt="placeholder">
         <h4>Shoulder Press: {{ exercises.newShoulderPress }}</h4>
         <span class="text-muted">Something</span>
       </div>
       <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="images/bicepcurl.png" width="200" height="200" class="img-respomsive" alt="placeholder">
+        <img src="images/bicepcurlCopy.png" width="200" height="200" class="img-respomsive" alt="placeholder">
         <h4>Bicep Curl: {{ exercises.newBicepCurl }}</h4>
         <span class="text-muted">Something</span>
       </div>
       <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="images/tricepcurlCopy.png" width="200" height="200" class="img-respomsive" alt="placeholder">
+        <img src="images/tricepcurlClear.png" width="200" height="200" class="img-respomsive" alt="placeholder">
         <h4>Tricep Curl: {{ exercises.newTricepCurl }}</h4>
         <span class="text-muted">Something</span>
       </div>

@@ -19,6 +19,224 @@ angular.module("myApp").service("currentService", function($http) {
         return response.data;
         })
     }
+    this.dataSource = {
+        chart: {
+          caption: "Deadlift",
+          //more chart properties - explained later
+        },
+        data: [{
+            label: "Target",
+            value: "880000"
+          }]
+        }
+        this.dataSource1 = {
+            chart: {
+              caption: "Deadlift",
+              //more chart properties - explained later
+            },
+            data: [{
+                label: "Target",
+                value: "880000"
+              },
+              {
+                  label: "Target",
+                  value: "660000"
+                }]
+            }
+            this.dataSource2 = {
+                chart: {
+                  caption: "Deadlift",
+                  //more chart properties - explained later
+                },
+                data: [{
+                    label: "Target",
+                    value: "35000"
+                  },
+                  {
+                      label: "Target",
+                      value: "35500"
+                    },
+                    {
+                        label: "Target",
+                        value: "36000"
+                      },
+                      {
+                          label: "Target",
+                          value: "35400"
+                        },
+                        {
+                            label: "Target",
+                            value: "37000"
+                          }]
+                }
+                this.dataSource3 = {
+                    chart: {
+                      caption: "Pendlay Row",
+                      //more chart properties - explained later
+                    },
+                    data: [{
+                        label: "Target",
+                        value: "880000"
+                      }]
+                    }
+                    this.dataSource4 = {
+                        chart: {
+                          caption: "Pendlay Row",
+                          //more chart properties - explained later
+                        },
+                        data: [{
+                            label: "Target",
+                            value: "880000"
+                          }]
+                        }
+                        this.dataSource5 = {
+                            chart: {
+                              caption: "Back Squat",
+                              //more chart properties - explained later
+                            },
+                            data: [{
+                                label: "Target",
+                                value: "880000"
+                              }]
+                            }
+                            this.dataSource6 = {
+                                chart: {
+                                  caption: "Back Squat",
+                                  //more chart properties - explained later
+                                },
+                                data: [{
+                                    label: "Target",
+                                    value: "880000"
+                                  }]
+                                }
+                                this.dataSource7 = {
+                                    chart: {
+                                      caption: "Front Squat",
+                                      //more chart properties - explained later
+                                    },
+                                    data: [{
+                                        label: "Target",
+                                        value: "880000"
+                                      }]
+                                    }
+                                    this.dataSource8 = {
+                                        chart: {
+                                          caption: "Front Squat",
+                                          //more chart properties - explained later
+                                        },
+                                        data: [{
+                                            label: "Target",
+                                            value: "880000"
+                                          }]
+                                        }
+                  this.dataSource9 = {
+                      chart: {
+                        caption: "Bench Press",
+                        //more chart properties - explained later
+                      },
+                      data: [{
+                          label: "Target",
+                          value: "880000"
+                        }]
+                      }
+                      this.dataSource10 = {
+                          chart: {
+                            caption: "Bench Press",
+                            //more chart properties - explained later
+                          },
+                          data: [{
+                              label: "Target",
+                              value: "880000"
+                            }]
+                          }
+                          this.dataSource11 = {
+                              chart: {
+                                caption: "Incline Bench",
+                                //more chart properties - explained later
+                              },
+                              data: [{
+                                  label: "Target",
+                                  value: "880000"
+                                }]
+                              }
+                              this.dataSource12 = {
+                                  chart: {
+                                    caption: "Incline Bench",
+                                    //more chart properties - explained later
+                                  },
+                                  data: [{
+                                      label: "Target",
+                                      value: "880000"
+                                    }]
+                                  }
+                                  this.dataSource13 = {
+                                      chart: {
+                                        caption: "Shoulder Press",
+                                        //more chart properties - explained later
+                                      },
+                                      data: [{
+                                          label: "Target",
+                                          value: "880000"
+                                        }]
+                                      }
+                                      this.dataSource14 = {
+                                          chart: {
+                                            caption: "Shoulder Press",
+                                            //more chart properties - explained later
+                                          },
+                                          data: [{
+                                              label: "Target",
+                                              value: "880000"
+                                            }]
+                                          }
+            this.dataSource15 = {
+                chart: {
+                  caption: "Barbell Bicep Curl",
+                  //more chart properties - explained later
+                },
+                data: [{
+                    label: "Target",
+                    value: "880000"
+                  }]
+                }
+                this.dataSource16 = {
+                    chart: {
+                      caption: "Barbell Bicep Curl",
+                      //more chart properties - explained later
+                    },
+                    data: [{
+                        label: "Target",
+                        value: "880000"
+                      }]
+                }
+                this.dataSource17 = {
+                    chart: {
+                      caption: "Barbell Tricep Curl",
+                      //more chart properties - explained later
+                    },
+                    data: [{
+                        label: "Target",
+                        value: "880000"
+                      }]
+                    }
+                    this.dataSource18 = {
+                        chart: {
+                          caption: "Barbell Tricep Curl",
+                          //more chart properties - explained later
+                        },
+                        data: [{
+                            label: "Target",
+                            value: "880000"
+                          }]
+                    }
+    this.getLastCurrent = function(username) {
+        return $http({
+            method: "GET",
+            url: 'http://localhost:3000/api/lastexercise/' + username
+        }).then(function(response) {
+        return response.data;
+        })
+    }
     this.updateData = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress,
      inclinebench, bench, bicepcurl, tricepcurl) {
         return $http({

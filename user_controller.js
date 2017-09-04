@@ -23,7 +23,7 @@ module.exports = {
     console.log(params)
     dbInstance.getUserById([ params.username, params.password ])
       .then( (username) => {
-        res.status(200).send( username )
+        res.status(200).send( username );
     })
       .catch( () => res.status(500).send() );
   },

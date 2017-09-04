@@ -11,6 +11,7 @@ const current_exercises_controller = require('./current_exercises_controller')
 const goal_exercises_controller = require('./goal_exercises_controller')
 const user_controller = require('./user_controller')
 const path = require('path');
+const jwt = require('jsonwebtoken')
 
 
 const app = module.exports = express()
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.post('/api/exercise', current_exercises_controller.create)
 app.get('/api/exercises', current_exercises_controller.getAll)
 app.get('/api/exercise/:id', current_exercises_controller.getOne)
+app.get('/api/lastexercise/:username', current_exercises_controller.getLast)
 app.put('/api/exercise/:id', current_exercises_controller.update)
 app.delete('/api/exercise/:id', current_exercises_controller.delete)
 

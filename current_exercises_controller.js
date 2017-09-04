@@ -16,7 +16,15 @@ module.exports = {
     const dbInstance = req.app.get('db');
     const { params } = req;
 
-    dbInstance.read_exercise([ params.username ])
+    dbInstance.read_exercise([ userid  ])
+      .then( response => res.status(200).send( response ) )
+      .catch( () => res.status(500).send() );
+  },
+  getLast: ( req, res, next ) => {
+    const dbInstance = req.app.get('db');
+    const { params } = req;
+    console.log(params.username)
+    dbInstance.read_exercise([ params.username  ])
       .then( response => res.status(200).send( response ) )
       .catch( () => res.status(500).send() );
   },

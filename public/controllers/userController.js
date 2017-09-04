@@ -5,6 +5,7 @@ angular.module('myApp').controller('userController', function(userService, $scop
     console.log('userController and username is : ' + username)
     userService.register(username, password, confirmpassword)
     .then(function (response) {
+
             console.log("scope.register")
             console.log(response)
     })
@@ -16,8 +17,10 @@ angular.module('myApp').controller('userController', function(userService, $scop
               console.log("scope.addGoalData")
               console.log(response)
       })
+      $scope.username = username
       $state.go('login')
   }
+  console.log("getdata")
 
   $scope.login = function(username, password) {
     console.log('loginController and username is : ' + username)

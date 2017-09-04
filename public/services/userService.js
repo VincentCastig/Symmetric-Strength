@@ -4,7 +4,7 @@
     this.register = function(username, password, confirmpassword) {
       //creat username
 
-      if(username.length < 6){
+      if(username.length < 3){
         alert("Username must be equal to or greater than 6 characters.")
         return;
       }
@@ -39,7 +39,7 @@
 
     this.login = function(username, password) {
       //find user via login
-      if(username.length <= 6){
+      if(username.length <= 3){
         alert("Username must be equal to or greater than 6 characters.")
         return;
       }

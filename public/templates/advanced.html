@@ -1,19 +1,27 @@
-Make sure to refresh after modifying an item<br>
-//tie it in together. use current formula
-//update how much you can lift
-<button ng-click="getGoalData()">Get/Refresh items in database</button><br>
+<div class="jumbotron" data-ng-init="getCurrentData()">
+  <div class="container">
+    <img src="images/dist/images/noun_30259_cc.png" width="200" height="200"alt="">
+    <h1 class="">Advanced</h1>
+  </div>
+</div>
 
-How much can you lift in a particular exercise
-<select ng-model="targetExercise" ng-options="x for x in vehicles">
-  <option value="" disabled selected>Select Your Exercise</option>
-</select>
-<input type="number" min="1" max="2000" placeholder="Weight" ng-model="weight">
-
-<select ng-model="reps" name="Repetitions" ng-options="x for x in repetitions">
-  <option value="" disabled selected>Select Your Repetitions</option>
-</select>
-
-<button ng-click="currentCalculator(weight, targetExercise)">calculate</button><br>
+<div class="container">
+  <form class="form-signin" action="index.html" method="post">
+    <h2 class="form-signin-heading">Calculate Your Ideal Strengths</h2>
+    <select ng-model="exerciseName" ng-options="x for x in vehicles">
+      <option value="" disabled selected>Select Your Exercise</option>
+    </select>
+    <input class="input-border-focus"type="number" min="1" max="2000" placeholder="Weight" ng-model="weight">
+    <select ng-model="unitMeasurement" name="Unit" ng-options="x for x in units">
+      <option value="" disabled selected>Select Your Unit</option>
+    </select>
+    <select ng-model="reps" name="Repetitions" ng-options="x for x in repetitions">
+      <option value="" disabled selected>Select Your Repetitions</option>
+    </select>
+    <button ng-click="currentCalculator(weight, exerciseName)">calculate</button>
+    <button ng-click="getGoalData()">Get/Refresh items in database</button>
+  </form>
+</div>
 
 
 
@@ -21,66 +29,109 @@ How much can you lift in a particular exercise
  exercises.newInclineBench, exercises.newBench,exercises.newBicepCurl, exercises.newTricepCurl)">update goal exercise</button><br>
 
 
-
-
-<button ng-click="currentAdd(exercises.newFrontSquat,exercises.newBackSquat,exercises.newPendlayRow,exercises.newDeadlift, exercises.newShoulderPress,
- exercises.newInclineBench, exercises.newBench,exercises.newBicepCurl, exercises.newTricepCurl )">Add Item</button><br>
-How much can you lift in the following exercises
-
-
-<input type="text" min="1" max="2000" placeholder="Weight" ng-model="frontSquat">
-<button ng-click="calculator(frontSquat, 'newFrontSquat')">Front Squat</button><br>
-
-<input type="text" min="1" max="2000" placeholder="Weight" ng-model="backSquat">
-<button ng-click="calculator(backSquat, 'newBackSquat')">Back Squat</button><br
-
-<input type="text" min="1" max="2000" placeholder="Weight" ng-model="deadLift">
-<button ng-click="calculator(deadLift, 'newDeadlift')">Deadlift</button><br>
-
-<input type="text" min="1" max="2000" placeholder="Weight" ng-model="pendlayRow">
-<button ng-click="calculator(pendlayRow, 'newPendlayRow')">PendlayRow</button><br>
-
-<input type="text" min="1" max="2000" placeholder="Weight" ng-model="benchPress">
-<button ng-click="calculator(benchPress, 'newBench')">Bench Press</button><br>
-
-<input type="text" min="1" max="2000" placeholder="Weight" ng-model="inclineBench">
-<button ng-click="calculator(inclineBench, 'newInclineBench')">Incline Press</button><br>
-
-<input type="text" min="1" max="2000" placeholder="Weight" ng-model="shoulderPress">
-<button ng-click="calculator(shoulderPress, 'newShoulderPress')">Shoulder Press</button><br>
-
 <input type="text" min="1" max="2000" placeholder="Weight" ng-model="bicepCurl">
-<button ng-click="calculator(bicepCurl, 'newBicepCurl')">Bicep Curl</button><br>
+<button ng-click="calculator(bicepCurl, 'newBicepCurl')">Bicep Curl</button>
 
-<input type="text" min="1" max="2000" placeholder="Weight" ng-model="tricepCurl">
-<button ng-click="calculator(tricepCurl, 'newTricepCurl')">Tricep Curl</button><br>
+<button ng-click="getLastCurrent()">Last</button>
 
-<div ng-repeat="exercises in displayGoalSymmetry">
-ID: {{exercises.id}}<br>
-Bench Press: {{ exercises.frontSquat }}<br>
-Back Squat: {{ exercises.newBackSquat }}<br>
-Front Squat: {{ exercises.newFrontSquat }}<br>
-Deadlift: {{ exercises.newDeadlift }}<br>
-Shoulder Press: {{ exercises.newShoulderPress }}<br>
-Incline Bench Press: {{ exercises.newInclineBench }}<br>
-Pendlay Row: {{ exercises.newPendlayRow }}<br>
-Bicep Curl: {{ exercises.newBicepCurl }}<br>
-Tricep Curl: {{ exercises.newTricepCurl }}<br>
-Date: {{exercises.date}} Lbs<br>
-Time: {{exercises.time}}<br>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <div>
+      <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource1}}">
+      </fusioncharts>
+
+      <fusioncharts id="mychartcontainer" chart="{{attrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource2}}">
+      </fusioncharts>
+
+      <input type="text" min="1" max="2000" placeholder="Weight" ng-model="deadLift">
+      <button ng-click="calculator(deadLift, 'newDeadlift')">Deadlift</button>
+  </div>
+  <div >
+    <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource3}}">
+    </fusioncharts>
+    <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource4}}">
+    </fusioncharts>
+    <input type="text" min="1" max="2000" placeholder="Weight" ng-model="pendlayRow">
+    <button ng-click="calculator(pendlayRow, 'newPendlayRow')">PendlayRow</button>
+</div>
+<div >
+  <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource5}}">
+  </fusioncharts>
+  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource6}}">
+  </fusioncharts>
+  <input type="text" min="1" max="2000" placeholder="Weight" ng-model="backSquat">
+  <button ng-click="calculator(backSquat, 'newBackSquat')">Back Squat</button>
+</div>
+<div >
+  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource7}}">
+  </fusioncharts>
+  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource8}}">
+  </fusioncharts>
+  <input type="text" min="1" max="2000" placeholder="Weight" ng-model="frontSquat">
+  <button ng-click="calculator(frontSquat, 'newFrontSquat')">Front Squat</button>
+</div>
+<div >
+  <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource9}}">
+  </fusioncharts>
+  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource10}}">
+  </fusioncharts>
+  <input type="text" min="1" max="2000" placeholder="Weight" ng-model="benchPress">
+  <button ng-click="calculator(benchPress, 'newBench')">Bench Press</button>
+</div>
+<div >
+  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource11}}" >
+  </fusionchar ts>
+  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource12}}">
+  </fusion charts>
+  <input type="text" min="1" max="2000" placeholder="Weight" ng-model="incli neBench">
+  <button ng-click="calculator(inclineBench, 'newInclineBench')">Incline Press</button>
+</div>
+<div >
+  <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource13}}">
+  </fusioncharts>
+  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource14}}">
+  </fusioncharts>
+  <input type="text" min="1" max="2000" placeholder="Weight" ng-model="shoulderPress">
+  <button ng-click="calculator(shoulderPress, 'newShoulderPress')">Shoulder Press</button>
+</div>
+<div >
+  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource15}}">
+  </fusioncharts>
+  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource16}}">
+  </fusioncharts>
+  <input type="text" min="1" max="2000" placeholder="Weight" ng-model="bicepCurl">
+  <button ng-click="calculator(bicepCurl, 'newBicepCurl')">Bicep Curl</button>
+</div>
+<div >
+  <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource17}}">
+  </fusioncharts>
+  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource18}}">
+  </fusioncharts>
+  <input type="text" min="1" max="2000" placeholder="Weight" ng-model="tricepCurl">
+  <button ng-click="calculator(tricepCurl, 'newTricepCurl')">Tricep Curl</button>
+</div>
+  </div>
+</div>
 </div>
 
-<div ng-repeat="items in displayCurrentSymmetry">
-  ID: {{items.id}}<br>
-  Bench Press: {{ exercises.newBench }}<br>
-  Back Squat: {{ exercises.newBackSquat }}<br>
-  Front Squat: {{ exercises.newFrontSquat }}<br>
-  Deadlift: {{ exercises.newDeadlift }}<br>
-  Shoulder Press: {{ exercises.newShoulderPress }}<br>
-  Incline Bench Press: {{ exercises.newInclineBench }}<br>
-  Pendlay Row: {{ exercises.newPendlayRow }}<br>
-  Bicep Curl: {{ exercises.newBicepCurl }}<br>
-  Tricep Curl: {{ exercises.newTricepCurl }}<br>
-  Weight: {{items.description}} Lbs<br>
-  Repetitions: {{items.price}}<br>
+
+
+<div ng-repeat="items in displayCurrent | orderBy: '-date'"
+ ng-show="$index < 1">
+  <ul>
+  <li>{{items.date | date: 'longDate'}}</li>
+  <li>{{items.date | date: 'shortTime'}}</li>
+  <li>{{items.reps}}</li>
+  <li>{{items.deadlift}}</li>
+  <li>{{items.pendlayrow}}</li>
+  <li>{{items.backsquat}}</li>
+  <li>{{items.frontsquat}}</li>
+  <li>{{items.benchpress}}</li>
+  <li>{{items.inclinebench}}</li>
+  <li>{{items.shoulderpress}}</li>
+  <li>{{items.bicepcurl}}</li>
+  <li>{{items.tricepcurl}}</li>
+  </ul>
 </div>

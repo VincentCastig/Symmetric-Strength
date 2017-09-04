@@ -4,7 +4,7 @@
     <h1 class="">Workout Log</h1>
   </div>
 </div>
-<button ng-click="getCurrentData()">Get/Refresh items in database</button><br>
+
 
 
     <select ng-model="name" ng-options="x for x in vehicles">
@@ -66,7 +66,7 @@
 
         </div>
         <h2 class="sub-header">List</h2>
-        <div class="table-responsive">
+        <div class="table-responsive" data-ng-init="getCurrentData()">
           <table class="table table-striped">
             <thead>
               <tr>

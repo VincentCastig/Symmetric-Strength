@@ -1,4 +1,4 @@
-angular.module("myApp", ['ui.router'])
+angular.module("myApp", ['ui.router', 'ng-fusioncharts'])
   .config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
