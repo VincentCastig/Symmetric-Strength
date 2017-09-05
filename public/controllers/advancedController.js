@@ -11,12 +11,7 @@ angular.module("myApp").controller('advancedController', function(goalService, c
     $scope.update = function(id,desc) {
         advancedService.updateData(id,desc)
     }
-    $scope.delete = function(id) {
-        advancedService.deleteData(id)
-    }
-    $scope.add = function(name,desc,price,img) {
-        advancedService.addData(name,desc,price,img)
-    }
+
 
 
 
@@ -60,9 +55,9 @@ angular.module("myApp").controller('advancedController', function(goalService, c
 
       $scope.attrs = {
 
-    "caption": "Sales Comparison: 2013 versus 2014",
-    "subCaption": "ok",
-    "numberprefix": "$",
+    "caption": "Workout Progress",
+    "subCaption": "",
+    "numberprefix": "Lbs",
     "plotgradientcolor": "",
     "bgcolor": "FFFFFF",
     "showalternatehgridcolor": "0",
@@ -72,7 +67,7 @@ angular.module("myApp").controller('advancedController', function(goalService, c
     "canvasborderalpha": "0",
     "canvasbordercolor": "CCCCCC",
     "canvasborderthickness": "1",
-    "yaxismaxvalue": "30000",
+    "yaxismaxvalue": "2500",
     "captionpadding": "30",
     "linethickness": "3",
     "yaxisvaluespadding": "15",
@@ -84,20 +79,35 @@ angular.module("myApp").controller('advancedController', function(goalService, c
 
 $scope.goalattrs = {"palettecolors": "#000, #e44a00" };
 
+$scope.updateMyChartData = function(val, name) {
+  const exercises = currentService.calculator(val,name)
+  console.log(exercises)
+    $scope.dataSource1.data[0].label = "Deadlift";
+    $scope.dataSource1.data[0].value = exercises.newDeadlift;
+    $scope.dataSource3.data[0].label = "PendlayRow";
+    $scope.dataSource3.data[0].value = exercises.newPendlayRow;
+    $scope.dataSource5.data[0].label = "BackSquat";
+    $scope.dataSource5.data[0].value = exercises.newBackSquat;
+    $scope.dataSource7.data[0].label = "FrontSquat";
+    $scope.dataSource7.data[0].value = exercises.newFrontSquat;
+    $scope.dataSource9.data[0].label = "Bench-Press";
+    $scope.dataSource9.data[0].value = exercises.newBench;
+    $scope.dataSource11.data[0].label = "Incline-Bench";
+    $scope.dataSource11.data[0].value = exercises.newInclineBench;
+    $scope.dataSource13.data[0].label = "Shoulder-Press";
+    $scope.dataSource13.data[0].value = exercises.newShoulderPress;
+    $scope.dataSource15.data[0].label = "Bicep-Curl";
+    $scope.dataSource15.data[0].value = exercises.newBicepCurl;
+    $scope.dataSource17.data[0].label = "Tricep-Curl";
+    $scope.dataSource17.data[0].value = exercises.newTricepCurl;
+  }
 
 
-    $scope.currentUpdate = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress,
-     inclinebench, bench, bicepcurl, tricepcurl) {
-        currentService.updateData(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress,
-         inclinebench, bench, bicepcurl, tricepcurl)
-    }
     $scope.currentDelete = function(id) {
         currentService.deleteData(id)
     }
-    $scope.currentAdd = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress,
-     inclinebench, bench, bicepcurl, tricepcurl) {
-        currentService.currentData(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress,
-         inclinebench, bench, bicepcurl, tricepcurl)
+    $scope.currentAdd = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps) {
+        currentService.addCurrentData(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps)
     }
     $scope.currentCalculator = function(val, name) {
       $scope.currentExercises = currentService.calculator(val,name)

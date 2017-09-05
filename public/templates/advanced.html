@@ -6,7 +6,7 @@
 </div>
 
 <div class="container">
-  <form class="form-signin" action="index.html" method="post">
+  <form class="form-signin"  method="post">
     <h2 class="form-signin-heading">Calculate Your Ideal Strengths</h2>
     <select ng-model="exerciseName" ng-options="x for x in vehicles">
       <option value="" disabled selected>Select Your Exercise</option>
@@ -19,27 +19,16 @@
       <option value="" disabled selected>Select Your Repetitions</option>
     </select>
     <button ng-click="currentCalculator(weight, exerciseName)">calculate</button>
-    <button ng-click="getGoalData()">Get/Refresh items in database</button>
+    <button ng-click="updateMyChartData(weight, exerciseName)">Refresh data in chart</button>
   </form>
 </div>
-
-
-
-<button ng-click="currentUpdate(exercises.newFrontSquat,exercises.newBackSquat,exercises.newPendlayRow,exercises.newDeadlift, exercises.newShoulderPress,
- exercises.newInclineBench, exercises.newBench,exercises.newBicepCurl, exercises.newTricepCurl)">update goal exercise</button><br>
-
-
-<input type="text" min="1" max="2000" placeholder="Weight" ng-model="bicepCurl">
-<button ng-click="calculator(bicepCurl, 'newBicepCurl')">Bicep Curl</button>
-
-<button ng-click="getLastCurrent()">Last</button>
 
 
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <div>
-      <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource1}}">
+      <fusioncharts id="mychartcontainer" chart="{{goalattrs}}"  width="40%" height="400" type="column2d" dataSource="{{dataSource1}}">
       </fusioncharts>
 
       <fusioncharts id="mychartcontainer" chart="{{attrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource2}}">
@@ -51,7 +40,7 @@
   <div >
     <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource3}}">
     </fusioncharts>
-    <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource4}}">
+    <fusioncharts id="mychartcontainer" chart="{{attrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource4}}">
     </fusioncharts>
     <input type="text" min="1" max="2000" placeholder="Weight" ng-model="pendlayRow">
     <button ng-click="calculator(pendlayRow, 'newPendlayRow')">PendlayRow</button>
@@ -59,15 +48,15 @@
 <div >
   <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource5}}">
   </fusioncharts>
-  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource6}}">
+  <fusioncharts id="mychartcontainer" chart="{{attrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource6}}">
   </fusioncharts>
   <input type="text" min="1" max="2000" placeholder="Weight" ng-model="backSquat">
   <button ng-click="calculator(backSquat, 'newBackSquat')">Back Squat</button>
 </div>
 <div >
-  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource7}}">
+  <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource7}}">
   </fusioncharts>
-  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource8}}">
+  <fusioncharts id="mychartcontainer" chart="{{attrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource8}}">
   </fusioncharts>
   <input type="text" min="1" max="2000" placeholder="Weight" ng-model="frontSquat">
   <button ng-click="calculator(frontSquat, 'newFrontSquat')">Front Squat</button>
@@ -75,31 +64,31 @@
 <div >
   <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource9}}">
   </fusioncharts>
-  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource10}}">
+  <fusioncharts id="mychartcontainer" chart="{{attrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource10}}">
   </fusioncharts>
   <input type="text" min="1" max="2000" placeholder="Weight" ng-model="benchPress">
   <button ng-click="calculator(benchPress, 'newBench')">Bench Press</button>
 </div>
 <div >
-  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource11}}" >
+  <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource11}}" >
   </fusionchar ts>
-  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource12}}">
+  <fusioncharts id="mychartcontainer" chart="{{attrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource12}}">
   </fusion charts>
-  <input type="text" min="1" max="2000" placeholder="Weight" ng-model="incli neBench">
+  <input type="text" min="1" max="2000" placeholder="Weight" ng-model="inclineBench">
   <button ng-click="calculator(inclineBench, 'newInclineBench')">Incline Press</button>
 </div>
 <div >
   <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource13}}">
   </fusioncharts>
-  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource14}}">
+  <fusioncharts id="mychartcontainer" chart="{{attrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource14}}">
   </fusioncharts>
   <input type="text" min="1" max="2000" placeholder="Weight" ng-model="shoulderPress">
   <button ng-click="calculator(shoulderPress, 'newShoulderPress')">Shoulder Press</button>
 </div>
 <div >
-  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource15}}">
+  <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource15}}">
   </fusioncharts>
-  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource16}}">
+  <fusioncharts id="mychartcontainer" chart="{{attrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource16}}">
   </fusioncharts>
   <input type="text" min="1" max="2000" placeholder="Weight" ng-model="bicepCurl">
   <button ng-click="calculator(bicepCurl, 'newBicepCurl')">Bicep Curl</button>
@@ -107,10 +96,14 @@
 <div >
   <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource17}}">
   </fusioncharts>
-  <fusioncharts id="mychartcontainer" chartid="mychart" width="40%" height="400" type="column2d" dataSource="{{dataSource18}}">
+  <fusioncharts id="mychartcontainer" chart="{{attrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource18}}">
   </fusioncharts>
   <input type="text" min="1" max="2000" placeholder="Weight" ng-model="tricepCurl">
   <button ng-click="calculator(tricepCurl, 'newTricepCurl')">Tricep Curl</button>
+  <input type="text" min="1" max="2000" placeholder="Weight" ng-model="bicepCurl">
+  <button ng-click="calculator(bicepCurl, 'newBicepCurl')">Bicep Curl</button>
+
+  <button ng-click="getLastCurrent()">Last</button>
 </div>
   </div>
 </div>

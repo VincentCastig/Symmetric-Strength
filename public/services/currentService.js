@@ -19,65 +19,64 @@ angular.module("myApp").service("currentService", function($http) {
         return response.data;
         })
     }
-    this.dataSource = {
-        chart: {
-          caption: "Deadlift",
-          //more chart properties - explained later
-        },
-        data: [{
-            label: "Target",
-            value: "880000"
-          }]
-        }
-        this.dataSource1 = {
+    //use a botton in advanced.html
+
+
+      this.dataSource1 =  {
             chart: {
               caption: "Deadlift",
               //more chart properties - explained later
             },
             data: [{
                 label: "Target",
-                value: "880000"
+                value: "200"
               },
               {
-                  label: "Target",
+                  label: "Most Recent",
                   value: "660000"
                 }]
             }
-            this.dataSource2 = {
-                chart: {
-                  caption: "Deadlift",
-                  //more chart properties - explained later
-                },
-                data: [{
-                    label: "Target",
-                    value: "35000"
-                  },
+
+
+      this.dataSource2 = {
+          chart: {
+            caption: "Deadlift",
+            //more chart properties - explained later
+          },
+          data: [{
+              label: "Target",
+              value: "200"
+            },
                   {
                       label: "Target",
-                      value: "35500"
+                      value: "200"
                     },
                     {
                         label: "Target",
-                        value: "36000"
+                        value: "200"
                       },
                       {
                           label: "Target",
-                          value: "35400"
+                          value: "200"
                         },
                         {
                             label: "Target",
-                            value: "37000"
+                            value: "200"
                           }]
                 }
                 this.dataSource3 = {
                     chart: {
-                      caption: "Pendlay Row",
+                      caption: "PendlayRow",
                       //more chart properties - explained later
                     },
                     data: [{
                         label: "Target",
-                        value: "880000"
-                      }]
+                        value: "200"
+                      },
+                      {
+                          label: "Most recent",
+                          value: "200"
+                        }]
                     }
                     this.dataSource4 = {
                         chart: {
@@ -86,8 +85,20 @@ angular.module("myApp").service("currentService", function($http) {
                         },
                         data: [{
                             label: "Target",
-                            value: "880000"
-                          }]
+                            value: "200"
+                          },
+                          {
+                              label: "Target",
+                              value: "200"
+                            },
+                            {
+                                label: "Target",
+                                value: "200"
+                              },
+                              {
+                                  label: "Target",
+                                  value: "200"
+                                }]
                         }
                         this.dataSource5 = {
                             chart: {
@@ -96,8 +107,12 @@ angular.module("myApp").service("currentService", function($http) {
                             },
                             data: [{
                                 label: "Target",
-                                value: "880000"
-                              }]
+                                value: "200"
+                              },
+                              {
+                                  label: "Target",
+                                  value: "200"
+                                }]
                             }
                             this.dataSource6 = {
                                 chart: {
@@ -106,8 +121,12 @@ angular.module("myApp").service("currentService", function($http) {
                                 },
                                 data: [{
                                     label: "Target",
-                                    value: "880000"
-                                  }]
+                                    value: "200"
+                                  },
+                                  {
+                                  label: "Target",
+                                  value: "200"
+                                }]
                                 }
                                 this.dataSource7 = {
                                     chart: {
@@ -116,8 +135,12 @@ angular.module("myApp").service("currentService", function($http) {
                                     },
                                     data: [{
                                         label: "Target",
-                                        value: "880000"
-                                      }]
+                                        value: "200"
+                                      },
+                                      {
+                                      label: "Target",
+                                      value: "200"
+                                    }]
                                     }
                                     this.dataSource8 = {
                                         chart: {
@@ -126,8 +149,12 @@ angular.module("myApp").service("currentService", function($http) {
                                         },
                                         data: [{
                                             label: "Target",
-                                            value: "880000"
-                                          }]
+                                            value: "200"
+                                          },
+                                          {
+                                          label: "Target",
+                                          value: "200"
+                                        }]
                                         }
                   this.dataSource9 = {
                       chart: {
@@ -136,8 +163,12 @@ angular.module("myApp").service("currentService", function($http) {
                       },
                       data: [{
                           label: "Target",
-                          value: "880000"
-                        }]
+                          value: "200"
+                        },
+                        {
+                        label: "Target",
+                        value: "200"
+                      }]
                       }
                       this.dataSource10 = {
                           chart: {
@@ -146,8 +177,12 @@ angular.module("myApp").service("currentService", function($http) {
                           },
                           data: [{
                               label: "Target",
-                              value: "880000"
-                            }]
+                              value: "200"
+                            },
+                            {
+                            label: "Target",
+                            value: "200"
+                          }]
                           }
                           this.dataSource11 = {
                               chart: {
@@ -156,8 +191,11 @@ angular.module("myApp").service("currentService", function($http) {
                               },
                               data: [{
                                   label: "Target",
-                                  value: "880000"
-                                }]
+                                  value: "200"
+                                },{
+                                label: "Target",
+                                value: "200"
+                              }]
                               }
                               this.dataSource12 = {
                                   chart: {
@@ -166,8 +204,11 @@ angular.module("myApp").service("currentService", function($http) {
                                   },
                                   data: [{
                                       label: "Target",
-                                      value: "880000"
-                                    }]
+                                      value: "200"
+                                    },{
+                                    label: "Target",
+                                    value: "200"
+                                  }]
                                   }
                                   this.dataSource13 = {
                                       chart: {
@@ -176,8 +217,11 @@ angular.module("myApp").service("currentService", function($http) {
                                       },
                                       data: [{
                                           label: "Target",
-                                          value: "880000"
-                                        }]
+                                          value: "200"
+                                        },{
+                                        label: "Target",
+                                        value: "200"
+                                      }]
                                       }
                                       this.dataSource14 = {
                                           chart: {
@@ -186,8 +230,11 @@ angular.module("myApp").service("currentService", function($http) {
                                           },
                                           data: [{
                                               label: "Target",
-                                              value: "880000"
-                                            }]
+                                              value: "200"
+                                            },{
+                                            label: "Target",
+                                            value: "200"
+                                          }]
                                           }
             this.dataSource15 = {
                 chart: {
@@ -196,8 +243,11 @@ angular.module("myApp").service("currentService", function($http) {
                 },
                 data: [{
                     label: "Target",
-                    value: "880000"
-                  }]
+                    value: "200"
+                  },{
+                  label: "Target",
+                  value: "200"
+                }]
                 }
                 this.dataSource16 = {
                     chart: {
@@ -206,8 +256,11 @@ angular.module("myApp").service("currentService", function($http) {
                     },
                     data: [{
                         label: "Target",
-                        value: "880000"
-                      }]
+                        value: "200"
+                      },{
+                      label: "Target",
+                      value: "200"
+                    }]
                 }
                 this.dataSource17 = {
                     chart: {
@@ -216,8 +269,11 @@ angular.module("myApp").service("currentService", function($http) {
                     },
                     data: [{
                         label: "Target",
-                        value: "880000"
-                      }]
+                        value: "200"
+                      },{
+                      label: "Target",
+                      value: "200"
+                    }]
                     }
                     this.dataSource18 = {
                         chart: {
@@ -226,8 +282,11 @@ angular.module("myApp").service("currentService", function($http) {
                         },
                         data: [{
                             label: "Target",
-                            value: "880000"
-                          }]
+                            value: "200"
+                          },{
+                          label: "Target",
+                          value: "200"
+                        }]
                     }
     this.getLastCurrent = function(username) {
         return $http({
@@ -250,11 +309,12 @@ angular.module("myApp").service("currentService", function($http) {
             url: 'http://localhost:3000/api/exercises/' + id
         })
     }
-    this.addData = function(name,desc,price,img) {
+    this.addCurrentData = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps) {
         return $http({
             method: "POST",
             url: 'http://localhost:3000/api/exercise/',
-            data: {"name" : name, "description" : desc, "price" : price, "imageurl" : img}
+            data: {"frontsquat" : frontsquat, "backsquat" : backsquat, "pendlayrow" : pendlayrow, "deadlift" : deadlift,
+          "shoulderpress" : shoulderpress, "inclinebench" : inclinebench, "benchpress" : benchpress, "bicepcurl" : bicepcurl, "tricepcurl" : tricepcurl, "reps" : reps}
         })
     }
 
@@ -347,10 +407,17 @@ angular.module("myApp").service("currentService", function($http) {
 
 
           }
-
-
-            console.log(exercises)
-        return exercises;
+          function round5(exercises) {
+              for (exercise in exercises){
+                exercises[exercise] = Math.round(exercises[exercise])
+                console.log(exercise)
+                if(exercises[exercise] > 50) {
+                  exercises[exercise] = Math.ceil(exercises[exercise]/5)*5
+                }
+              }
+              return exercises;
+          }
+          return round5(exercises);
       }
 
 

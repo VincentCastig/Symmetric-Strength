@@ -1,12 +1,12 @@
 <div class="jumbotron">
   <div class="container">
     <img src="images/dist/images/noun_30259_cc.png" width="200" height="200"alt="">
-    <h1 class="">Vintruv</h1>
+    <h1 class="">Strength Calculator</h1>
   </div>
 </div>
 
 <div class="container">
-  <form class="form-signin" action="index.html" method="post">
+  <form class="form-signin"  method="post">
     <h2 class="form-signin-heading">Calculate Your Ideal Strengths</h2>
     <select ng-model="exerciseName" ng-options="x for x in vehicles">
       <option value="" disabled selected>Select Your Exercise</option>
@@ -18,12 +18,9 @@
     <select ng-model="reps" name="Repetitions" ng-options="x for x in repetitions">
       <option value="" disabled selected>Select Your Repetitions</option>
     </select>
+    <button ng-click= "calculator(weight, exerciseName)">Calculate</button>
   </form>
 </div>
-
-
-
-<button ng-click= "calculator(weight, exerciseName)">Calculate</button><br>
 
 
 <div class="container-fluid">
@@ -76,6 +73,7 @@
         <h4>Tricep Curl: {{ exercises.newTricepCurl }}</h4>
         <span class="text-muted">Something</span>
       </div>
+
     </div>
   </div>
   </div>
