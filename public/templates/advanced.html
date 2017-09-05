@@ -12,14 +12,14 @@
       <option value="" disabled selected>Select Your Exercise</option>
     </select>
     <input class="input-border-focus"type="number" min="1" max="2000" placeholder="Weight" ng-model="weight">
-    <select ng-model="unitMeasurement" name="Unit" ng-options="x for x in units">
-      <option value="" disabled selected>Select Your Unit</option>
-    </select>
+
     <select ng-model="reps" name="Repetitions" ng-options="x for x in repetitions">
       <option value="" disabled selected>Select Your Repetitions</option>
     </select>
-    <button ng-click="currentCalculator(weight, exerciseName)">calculate</button>
-    <button ng-click="updateMyChartData(weight, exerciseName)">Refresh data in chart</button>
+
+    <button ng-click="updateMyChartData(weight, exerciseName)">Refresh Goal Data in Chart</button>
+    <button ng-click="updateMyCurrentChartData()">Refresh Current Data in Chart</button>
+
   </form>
 </div>
 
@@ -71,9 +71,9 @@
 </div>
 <div >
   <fusioncharts id="mychartcontainer" chart="{{goalattrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource11}}" >
-  </fusionchar ts>
+  </fusioncharts>
   <fusioncharts id="mychartcontainer" chart="{{attrs}}" width="40%" height="400" type="column2d" dataSource="{{dataSource12}}">
-  </fusion charts>
+  </fusioncharts>
   <input type="text" min="1" max="2000" placeholder="Weight" ng-model="inclineBench">
   <button ng-click="calculator(inclineBench, 'newInclineBench')">Incline Press</button>
 </div>
@@ -107,24 +107,4 @@
 </div>
   </div>
 </div>
-</div>
-
-
-
-<div ng-repeat="items in displayCurrent | orderBy: '-date'"
- ng-show="$index < 1">
-  <ul>
-  <li>{{items.date | date: 'longDate'}}</li>
-  <li>{{items.date | date: 'shortTime'}}</li>
-  <li>{{items.reps}}</li>
-  <li>{{items.deadlift}}</li>
-  <li>{{items.pendlayrow}}</li>
-  <li>{{items.backsquat}}</li>
-  <li>{{items.frontsquat}}</li>
-  <li>{{items.benchpress}}</li>
-  <li>{{items.inclinebench}}</li>
-  <li>{{items.shoulderpress}}</li>
-  <li>{{items.bicepcurl}}</li>
-  <li>{{items.tricepcurl}}</li>
-  </ul>
 </div>

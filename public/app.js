@@ -5,17 +5,17 @@ angular.module("myApp", ['ui.router', 'ng-fusioncharts'])
 
     $stateProvider
       .state('register', {
-        url: '/register',
+        url: '/login',
         templateUrl: './templates/register.html',
         controller: 'userController'
       })
       .state('login', {
-        url: '/login',
-        templateUrl: './templates/login.html',
+        url: '/register',
+        templateUrl: './templates/register.html',
         controller: 'userController'
       })
       .state('logout', {
-        url: '/',
+        url: '/logout',
         templateUrl: './templates/register.html',
         controller: 'userController'
       })
@@ -30,7 +30,7 @@ angular.module("myApp", ['ui.router', 'ng-fusioncharts'])
         controller: 'advancedController'
       })
       .state('basic', {
-        url: '/basic',
+        url: '/',
         templateUrl: './templates/basic.html',
         controller: 'basicController'
       })

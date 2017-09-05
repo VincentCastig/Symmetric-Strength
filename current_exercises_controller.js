@@ -5,11 +5,11 @@ module.exports = {
 
     const { frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps } = req.body;
     console.log(reps)
-
-    dbInstance.create_exercises([ frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps, req.user ])
+    console.log("USER BEFORE CREATE EXERCISE",req.user)
+    dbInstance.create_exercises([ frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps, req.user[0].authid ])
 
       .then( (response) => res.status(200).send(response) )
-      .catch( () => res.status(500).send(req.body) );
+      .catch( (err) => res.status(500).send(err) );
   },
 
   getOne: ( req, res, next ) => {
@@ -22,8 +22,9 @@ module.exports = {
   },
   getLast: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
-
-    dbInstance.read_exercise([ 'vincent'  ])
+    console.log("getting lastData")
+    console.log(req.user[0].authid)
+    dbInstance.read_exercise(req.user[0].authid)
       .then( response => res.status(200).send( response ) )
       .catch( () => res.status(500).send(req.body) );
   },
@@ -31,9 +32,9 @@ module.exports = {
   getAll: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
 
-    dbInstance.read_exercises()
+    dbInstance.read_exercises(req.user[0].authid)
       .then( response => res.status(200).send( response ) )
-      .catch( () => res.status(500).send() );
+      .catch( () => res.status(500).send(req.body) );
   },
 
   update: ( req, res, next ) => {

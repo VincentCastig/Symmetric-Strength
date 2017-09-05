@@ -24,14 +24,6 @@ angular.module("myApp").controller('advancedController', function(goalService, c
 
         $scope.next = response.next;
         $scope.back = response.back;
-
-        $scope.getLastCurrent = function() {
-          let username = response[response.length-1].userid
-            currentService.getLastCurrent(username).then(function(response) {
-              const lastData = response;
-
-          });
-        };
       })
       }
       $scope.dataSource1 = currentService.dataSource1;
@@ -101,6 +93,44 @@ $scope.updateMyChartData = function(val, name) {
     $scope.dataSource17.data[0].label = "Tricep-Curl";
     $scope.dataSource17.data[0].value = exercises.newTricepCurl;
   }
+  $scope.updateMyCurrentChartData = function() {
+
+        currentService.getLastCurrent().then(function(response) {
+          console.log(response[0]);
+          $scope.dataSource1.data[1].label = "Deadlift";
+          $scope.dataSource1.data[1].value = response[0].deadlift;
+          $scope.dataSource3.data[1].label = "PendlayRow";
+          $scope.dataSource3.data[1].value = response[0].pendlayrow;
+          $scope.dataSource5.data[1].label = "BackSquat";
+          $scope.dataSource5.data[1].value = response[0].backsquat;
+          $scope.dataSource7.data[1].label = "FrontSquat";
+          $scope.dataSource7.data[1].value = response[0].frontsquat;
+          $scope.dataSource9.data[1].label = "Bench-Press";
+          $scope.dataSource9.data[1].value = response[0].benchpress;
+          $scope.dataSource11.data[1].label = "Incline-Bench";
+          $scope.dataSource11.data[1].value = response[0].inclinebench;
+          $scope.dataSource13.data[1].label = "Shoulder-Press";
+          $scope.dataSource13.data[1].value = response[0].shoulderpress;
+          $scope.dataSource15.data[1].label = "Bicep-Curl";
+          $scope.dataSource15.data[1].value = response[0].bicepcurl;
+          $scope.dataSource17.data[1].label = "Tricep-Curl";
+          $scope.dataSource17.data[1].value = response[0].tricepcurl;
+      })
+      currentService.getLastFiveCurrent().then(function(response) {
+        console.log(response);
+        $scope.dataSource2.data = response.deadlift;
+        $scope.dataSource4.data = response.pendlayrow;
+        $scope.dataSource6.data = response.backsquat;
+        $scope.dataSource8.data = response.frontsquat;
+        $scope.dataSource10.data = response.benchpress;
+        $scope.dataSource12.data = response.inclinebench;
+        $scope.dataSource14.data = response.shoulderpress;
+        $scope.dataSource16.data = response.bicepcurl;
+        $scope.dataSource18.data = response.tricepcurl;
+      })
+    };
+
+
 
 
     $scope.currentDelete = function(id) {

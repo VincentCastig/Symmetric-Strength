@@ -1,4 +1,5 @@
 angular.module("myApp").service("currentService", function($http) {
+  console.log("service is working")
     this.getCurrentData = function() {
         return $http({
             method: "GET",
@@ -33,7 +34,7 @@ angular.module("myApp").service("currentService", function($http) {
               },
               {
                   label: "Most Recent",
-                  value: "660000"
+                  value: "200"
                 }]
             }
 
@@ -288,14 +289,47 @@ angular.module("myApp").service("currentService", function($http) {
                           value: "200"
                         }]
                     }
-    this.getLastCurrent = function(username) {
+    this.getLastCurrent = function() {
         return $http({
             method: "GET",
-            url: 'http://localhost:3000/api/lastexercise/' + username
+            url: 'http://localhost:3000/api/lastexercise/'
         }).then(function(response) {
         return response.data;
         })
     }
+
+    this.getLastFiveCurrent = function() {
+        return $http({
+            method: "GET",
+            url: 'http://localhost:3000/api/exercises'
+        }).then(function(response) {
+          const weightLiftData = {
+            deadlift: [],
+            benchpress: [],
+            pendlayrow: [],
+            backsquat: [],
+            frontsquat: [],
+            inclinebench: [],
+            shoulderpress: [],
+            bicepcurl: [],
+            tricepcurl: []
+          }
+          let counter = 0
+            for (obj of response.data){
+                for(exercises in obj){
+                  if(weightLiftData[exercises]){
+                    weightLiftData[exercises].push({label: exercises, value: obj[exercises]})
+                }
+              }
+              counter ++
+              if(counter > 6){
+                return weightLiftData
+              }
+            }
+        return weightLiftData;
+        })
+    }
+
     this.updateData = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress,
      inclinebench, bench, bicepcurl, tricepcurl) {
         return $http({

@@ -1,1 +1,1 @@
-SELECT * FROM currentExercises;
+SELECT * FROM currentExercises WHERE userid = $1;

@@ -76,11 +76,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="items in displayCurrent | orderBy: '-date'"
+              <tr ng-repeat="items in displayCurrent | orderBy: '-dates'"
               ng-show="(($index < (displayCurrent.page * displayCurrent.numRecords))
               && ($index >= ((displayCurrent.page - 1) * displayCurrent.numRecords)))">
-                <th>{{items.date | date: 'longDate'}}</th>
-                <th>{{items.date | date: 'shortTime'}}</th>
+                <th>{{items.dates | date: 'longDate'}}</th>
+                <th>{{items.dates | date: 'shortTime'}}</th>
                 <th>{{items.reps}}</th>
                 <th>{{items.deadlift}}</th>
                 <th>{{items.pendlayrow}}</th>
