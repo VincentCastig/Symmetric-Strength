@@ -1,3 +1,4 @@
+const dotenv = require('dotenv').config()
 const express = require('express')
 const session = require('express-session')
 const passport = require('passport')
@@ -28,7 +29,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
-massive(config.massiveConnectionString).then( db => {app.set("db", db)});
+const massiveConnectionString = process.env.DATABASE_URL
+
+massive(massiveConnectionString).then( db => {app.set("db", db)});
 
 // db.create_user(function(err, user) {
 //   if (err) console.log(err);
@@ -132,6 +135,6 @@ app.get('/api/users', user_controller.getAll)
 //login user and find user by username
 app.get('/api/user/:username/:password', user_controller.getUser)
 
-app.listen(port, ()=> {
+app.listen(process.env.PORT, ()=> {
   console.log(`Hey dude, I'm listening on port ${port}`)
 })
