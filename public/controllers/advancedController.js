@@ -32,7 +32,7 @@ angular.module("myApp").controller('advancedController', function(goalService, c
 
     "caption": "Workout Progress",
     "subCaption": "",
-    "numberprefix": "Lbs",
+    "numberprefix": "",
     "plotgradientcolor": "",
     "bgcolor": "FFFFFF",
     "showalternatehgridcolor": "0",

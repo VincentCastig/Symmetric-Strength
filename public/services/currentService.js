@@ -48,18 +48,6 @@ angular.module("myApp").service("currentService", function($http) {
               label: "Target",
               value: "200"
             },
-                  {
-                      label: "Target",
-                      value: "200"
-                    },
-                    {
-                        label: "Target",
-                        value: "200"
-                      },
-                      {
-                          label: "Target",
-                          value: "200"
-                        },
                         {
                             label: "Target",
                             value: "200"
@@ -88,14 +76,6 @@ angular.module("myApp").service("currentService", function($http) {
                             label: "Target",
                             value: "200"
                           },
-                          {
-                              label: "Target",
-                              value: "200"
-                            },
-                            {
-                                label: "Target",
-                                value: "200"
-                              },
                               {
                                   label: "Target",
                                   value: "200"
