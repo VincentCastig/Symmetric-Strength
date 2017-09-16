@@ -263,10 +263,10 @@ angular.module("myApp").service("currentService", function($http) {
                         },
                         data: [{
                             label: "Target",
-                            value: "200"
+                            value: "201"
                           },{
                           label: "Target",
-                          value: "200"
+                          value: "201"
                         }]
                     }
     this.getLastCurrent = function() {
@@ -310,19 +310,6 @@ angular.module("myApp").service("currentService", function($http) {
         })
     }
 
-    this.updateData = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress,
-     inclinebench, bench, bicepcurl, tricepcurl) {
-        return $http({
-            method: "PUT",
-            url: 'http://localhost:3000/api/exercise/' + frontsquat
-        })
-    }
-    this.deleteData = function(id) {
-        return $http({
-            method: "DELETE",
-            url: 'http://localhost:3000/api/exercises/' + id
-        })
-    }
     this.addCurrentData = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps) {
         return $http({
             method: "POST",

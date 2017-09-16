@@ -1,14 +1,18 @@
 angular.module("myApp").controller('advancedController', function(goalService, currentService, $scope) {
 
 
-    $scope.getCurrentData = function() {
-        currentService.getCurrentData().then(function(response) {
-        $scope.displayCurrent = response;
-
-        $scope.next = response.next;
-        $scope.back = response.back;
-      })
+  $scope.getCurrentData = function() {
+    currentService.getCurrentData().then(function(response) {
+      if(response){
+    $scope.displayCurrent = response;
+    $scope.next = response.next;
+    $scope.back = response.back;
       }
+  })
+  .catch(function() {
+    console.log('error')
+    })
+  }
       $scope.dataSource1 = currentService.dataSource1;
       $scope.dataSource2 = currentService.dataSource2;
       $scope.dataSource3 = currentService.dataSource3;
@@ -152,4 +156,8 @@ $scope.updateMyChartData = function(val, name) {
       $scope.vehicles = ["Bench Press", "Deadlift", "Squat", "Barbell Bicep Curl", "Tricep EZ-Bar Curl", "Shoulder Barbell Press"];
       $scope.repetitions = [5,6,7,8,9,10];
 
+
+      $scope.getCurrentData();
 })
+
+
