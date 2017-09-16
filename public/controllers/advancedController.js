@@ -1,22 +1,5 @@
 angular.module("myApp").controller('advancedController', function(goalService, currentService, $scope) {
-//
-  $scope.registerData = function() {
-      advancedService.getRegisterData().then(function(response) {
-        console.log(response)
-      $scope.displayUser = response;
 
-      });
-  }
-
-    $scope.update = function(id,desc) {
-        advancedService.updateData(id,desc)
-    }
-
-
-
-
-    $scope.vehicles = ["Bench Press", "Deadlift", "Squat", "Barbell Bicep Curl", "Tricep EZ-Bar Curl", "Shoulder Barbell Press"];
-    $scope.repetitions = [5,6,7,8,9,10];
 
     $scope.getCurrentData = function() {
         currentService.getCurrentData().then(function(response) {
@@ -161,15 +144,7 @@ $scope.updateMyChartData = function(val, name) {
 
           });
       }
-      $scope.update = function(id,desc) {
-          goalService.updateData(id,desc)
-      }
-      $scope.delete = function(id) {
-          goalService.deleteData(id)
-      }
-      $scope.add = function(name,desc,price,img) {
-          goalService.addData(name,desc,price,img)
-      }
+
       $scope.calculator = function(val, name) {
         $scope.exercises = goalService.calculator(val,name)
       }

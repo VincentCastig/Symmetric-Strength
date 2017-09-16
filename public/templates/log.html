@@ -44,7 +44,7 @@
               </tr>
             </tbody>
           </table>
-          <button ng-click="currentAdd(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps); getCurrentData()">Add Item</button>
+          <button class="btn-primary" ng-click="currentAdd(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps); getCurrentData()">Save Lifts</button>
         </div>
       </div>
     </div>
@@ -95,7 +95,9 @@
             </tbody>
           </table>
         </div>
-        <div><button ng-click="next()">Next 15</button></div>
-        <div><button ng-click="back()">Prev 15</button></div>
+        <form>
+          <button class="btn-primary" ng-click="back()">Prev</button>
+          <button class="btn-primary" ng-click="next()">Next</button>
+      </form>
       </div>
     </div>

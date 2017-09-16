@@ -6,16 +6,26 @@
 </div>
 
 <div class="container">
-  <form class="form-signin"  method="post">
+  <form class="form-inline"  method="post">
     <h2 class="form-signin-heading">Calculate Your Ideal Strengths</h2>
-    <select ng-model="exerciseName" ng-options="x for x in vehicles">
-      <option value="" disabled selected>Select Your Exercise</option>
-    </select>
-    <input type="number" min="1" max="2000" placeholder="Weight" ng-model="weight">
-    <select ng-model="reps" name="Repetitions" ng-options="x for x in repetitions">
-      <option value="" disabled selected>Select Your Repetitions</option>
-    </select>
-    <button ng-click= "calculator(weight, exerciseName)">Calculate</button>
+    <div class="form-group">
+      <label for="email">Exercise: </label>
+      <select ng-model="exerciseName" ng-options="x for x in vehicles">
+        <option value="" disabled selected>Select Your Exercise</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label for="email">Weight: </label>
+        <input type="number" min="1" max="2000" placeholder="Enter Weight" ng-model="weight">
+        <label for="email">Repetitions: </label>
+    </div>    
+    <div class="form-group">    
+        <select ng-model="reps" name="Repetitions" ng-options="x for x in repetitions">
+          <option value="" disabled selected>Select Your Repetitions</option>
+        </select>
+    </div>
+    <button class="btn btn-primary" ng-click= "calculator(weight, exerciseName)">Calculate</button>    
+  </div>
   </form>
 </div>
 
@@ -27,7 +37,7 @@
     <div class="row placeholders">
       <div class="col-xs-6 col-sm-3 placeholder">
         <img src="images/deadliftClear.png" width="200" height="200" class="img-respomsive" alt="placeholder">
-        <h4>Deadlift: {{ exercises.newDeadlift }}</h4>
+        <h4 class="strong">Deadlift: {{ exercises.newDeadlift }}</h4>
         <span class="text-muted">Something</span>
       </div>
       <div class="col-xs-6 col-sm-3 placeholder">
