@@ -14,7 +14,7 @@
       }
       return $http({
         method: "POST",
-        url: 'http://localhost:3000/api/user',
+        url: 'http://vintruv.herokuapp.com/api/user',
         data: {"username": username, "password": password}
       })
       .then(function(res) {
@@ -29,7 +29,7 @@
       console.log("service addGoalData " + username)
         return $http({
             method: "POST",
-            url: 'http://localhost:3000/api/goal/',
+            url: 'http://vintruv.herokuapp.com/api/goal/',
             data: {"username": username}
         })
         .then(function(res) {
@@ -49,7 +49,7 @@
       }
       return $http({
         method: 'GET',
-        url: 'http://localhost:3000/api/user/' + username + '/' + password
+        url: 'http://vintruv.herokuapp.com/api/user/' + username + '/' + password
       })
       .then(function(res) {
         return res.data;
@@ -62,7 +62,7 @@
     this.logout = function() {
       return $http({
         method: 'GET',
-        url: 'http://localhost:3000/api/logout'
+        url: 'http://vintruv.herokuapp.com/api/logout'
       })
       .then(function(res) {
         return res.data;

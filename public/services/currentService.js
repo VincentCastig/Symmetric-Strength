@@ -3,7 +3,7 @@ angular.module("myApp").service("currentService", function($http) {
     this.getCurrentData = function() {
         return $http({
             method: "GET",
-            url: 'http://localhost:3000/api/exercises'
+            url: 'http://vintruv.herokuapp.com/api/exercises'
         }).then(function(response) {
             response.data.numRecords = 5;
             response.data.page = 1;
@@ -272,7 +272,7 @@ angular.module("myApp").service("currentService", function($http) {
     this.getLastCurrent = function() {
         return $http({
             method: "GET",
-            url: 'http://localhost:3000/api/lastexercise/'
+            url: 'http://vintruv.herokuapp.com/api/lastexercise/'
         }).then(function(response) {
         return response.data;
         })
@@ -281,7 +281,7 @@ angular.module("myApp").service("currentService", function($http) {
     this.getLastFiveCurrent = function() {
         return $http({
             method: "GET",
-            url: 'http://localhost:3000/api/exercises'
+            url: 'http://vintruv.herokuapp.com/api/exercises'
         }).then(function(response) {
           const weightLiftData = {
             deadlift: [],
@@ -313,7 +313,7 @@ angular.module("myApp").service("currentService", function($http) {
     this.addCurrentData = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps) {
         return $http({
             method: "POST",
-            url: 'http://localhost:3000/api/exercise/',
+            url: 'http://vintruv.herokuapp.com/api/exercise/',
             data: {"frontsquat" : frontsquat, "backsquat" : backsquat, "pendlayrow" : pendlayrow, "deadlift" : deadlift,
           "shoulderpress" : shoulderpress, "inclinebench" : inclinebench, "benchpress" : benchpress, "bicepcurl" : bicepcurl, "tricepcurl" : tricepcurl, "reps" : reps}
         })
