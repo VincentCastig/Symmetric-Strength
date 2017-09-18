@@ -7,7 +7,6 @@ const bodyParser = require('body-parser')
 const massive = require('massive')
 const cors = require('cors');
 const port = 3000
-const config = require('./config')
 const current_exercises_controller = require('./current_exercises_controller')
 const goal_exercises_controller = require('./goal_exercises_controller')
 const user_controller = require('./user_controller')
@@ -22,7 +21,7 @@ app.use(cors() )
 app.use(session({
   resave: true, //Without this you get a constant warning about default values
   saveUninitialized: true, //Without this you get a constant warning about default values
-  secret: config.secret
+  secret: process.env.secret
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -32,16 +31,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const massiveConnectionString = process.env.DATABASE_URL
 
-massive(massiveConnectionString).then( db => {app.set("db", db)});
+massive(process.env.DATABASE_URL).then( db => {app.set("db", db)});
 // db.create_user(function(err, user) {
 //   if (err) console.log(err);
 //   else console.log('CREATED USER');
 //   console.log(user);
 // })
 passport.use(new Auth0Strategy({
-   domain:       massiveConnectionString.domain,
-   clientID:     massiveConnectionString.clientID,
-   clientSecret: massiveConnectionString.clientSecret,
+   domain:       process.env.domain,
+   clientID:     process.env.clientID,
+   clientSecret: process.env.clientSecret,
    callbackURL:  '/auth/callback'
  },
   function(accessToken, refreshToken, extraParams, profile, done) {
