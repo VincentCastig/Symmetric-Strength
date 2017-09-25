@@ -39,17 +39,10 @@
 
     this.login = function(username, password) {
       //find user via login
-      if(username.length <= 3){
-        alert("Username must be equal to or greater than 6 characters.")
-        return;
-      }
-      else if(password.length <= 6){
-        alert("Password must be equal to or greater than 6 characters.")
-        return;
-      }
+      
       return $http({
         method: 'GET',
-        url: 'http://vintruv.herokuapp.com/api/user/' + username + '/' + password
+        url: 'http://vintruv.herokuapp.com/api/user/'
       })
       .then(function(res) {
         return res.data;

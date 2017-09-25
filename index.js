@@ -46,12 +46,11 @@ passport.use(new Auth0Strategy({
   function(accessToken, refreshToken, extraParams, profile, done) {
     //Find user in database
     const db = app.get('db')
-    console.log("profile", profile.nickname)
-    console.log("profile", profile.identities[0].user_id)
+    
 
     db.getUserByAuthId([profile.identities[0].user_id]).then((user) => {
       console.log("user", user.length)
-      console.log("user", user)
+      console.log("the user", user)
       if (user.length < 1) { //if there isn't one, we'll create one!
         console.log('CREATING USER');
         db.createUserByAuth([ profile.nickname, profile.identities[0].user_id]).then((user) => {
