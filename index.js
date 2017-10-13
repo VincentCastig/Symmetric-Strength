@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const massiveConnectionString = process.env.DATABASE_URL
 
-massive(process.env.DATABASE_URL).then( db => {app.set("db", db)});
+massive(massiveConnectionString).then( db => {app.set("db", db)});
 // db.create_user(function(err, user) {
 //   if (err) console.log(err);
 //   else console.log('CREATED USER');
