@@ -297,6 +297,7 @@ angular.module("myApp").service("currentService", function($http) {
           let counter = 0
             for (obj of response.data){
                 for(exercises in obj){
+                  console.log(exercised)
                   if(weightLiftData[exercises]){
                     weightLiftData[exercises].push({label: exercises, value: obj[exercises]})
                 }
