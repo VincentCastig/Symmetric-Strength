@@ -1,103 +1,172 @@
-<div class="jumbotron">
-  <div class="container">
-    <img src="images/dist/images/noun_30259_cc.png" width="200" height="200"alt="">
-    <h1 class="">Workout Log</h1>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <img src="images/dist/images/noun_30259_cc.png" width="200" height="200"alt="">
+        <h1 class="">Workout Log</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+          <div class='col-sm-3 col-md-2 sidebar'>
+            <ul  class="nav nav-sidebar">
+                <li  class="active">
+                    <a ng-click="back=false; legs=false; chest=false; shoulders=false; arms=false" href="">
+                      All<span class="sr-only"(current)></span>
+                    </a>
+                  </li>
+              <li  class="active">
+                <a ng-click="legs=!legs;" href="">
+                  Legs<span class="sr-only"(current)></span>
+                </a>
+              </li>
+              <li class="active">
+                  <a ng-click="back=!back;"href="">
+                    Back
+                  </a>
+              </li>
+              <li class="active">
+                  <a ng-click="chest=!chest;" href="">
+                    Chest
+                  </a>
+              </li>
+              <li class="active">
+                  <a ng-click="arms=!arms;" href="">
+                    Arms
+                  </a>
+              </li>
+              <li class="active">
+                  <a ng-click="shoulders=!shoulders;" href="">
+                    Shoulders/Traps
+                  </a>
+              </li>     
+            </ul>
+          </div>  
+        </div>
+      </div> 
+
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <div class="row placeholders">
+        <div class="col-xs-3 col-sm-3 placeholder">
+        </div>
+
+      </div>
+      <h2 class="sub-header">Enter Your Best Lifts For The Day</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th ng-hide="back">Deadlift</th>
+              <th ng-hide="back">Pendlay Row</th>
+              <th ng-hide="legs">Back Squat</th>
+              <th ng-hide="legs">Front Squat</th>
+              <th ng-hide="chest">Bench Press</th>
+              <th ng-hide="chest">Incline Press</th>
+              <th ng-hide="shoulders">Shoulder Press</th>
+              <th ng-hide="arms">Bicep Curl</th>
+              <th ng-hide="arms">Tricep Curl</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td ng-hide="back">
+                  <input type="number" min="1" max="2000" placeholder="Lbs" ng-model="deadlift">
+                  <input type="number" min="1" max="2000" placeholder="Reps" ng-model="">
+              </td>
+              <td ng-hide="back">
+                  <input type="number" min="1" max="2000" placeholder="Lbs" ng-model="pendlayrow">
+                  <input type="number" min="1" max="2000" placeholder="Reps" ng-model="">
+              </td>
+              <td ng-hide="legs">
+                  <input type="number" min="1" max="2000" placeholder="Lbs" ng-model="backsquat">
+                  <input type="number" min="1" max="2000" placeholder="Reps" ng-model="">
+              </td>
+              <td ng-hide="legs">
+                  <input type="number" min="1" max="2000" placeholder="Lbs" ng-model="frontsquat">
+                  <input type="number" min="1" max="2000" placeholder="Reps" ng-model="">
+              </td>
+              <td ng-hide="chest">
+                  <input type="number" min="1" max="2000" placeholder="Lbs" ng-model="benchpress">
+                  <input type="number" min="1" max="2000" placeholder="Reps" ng-model="">
+              </td>
+              <td ng-hide="chest">
+                  <input type="number" min="1" max="2000" placeholder="Lbs" ng-model="inclinebench">
+                  <input type="number" min="1" max="2000" placeholder="Reps" ng-model="">
+              </td>
+              <td ng-hide="shoulders">
+                  <input type="number" min="1" max="2000" placeholder="Lbs" ng-model="shoulderpress">
+                  <input type="number" min="1" max="2000" placeholder="Reps" ng-model="">
+              </td>
+              <td ng-hide="arms">
+                  <input type="number" min="1" max="2000" placeholder="Lbs" ng-model="bicepcurl">
+                  <input type="number" min="1" max="2000" placeholder="Reps" ng-model="">
+              </td>
+              <td ng-hide="arms">
+                  <input type="number" min="1" max="2000" placeholder="Lbs" ng-model="tricepcurl">
+                  <input type="number" min="1" max="2000" placeholder="Reps" ng-model="">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn-primary" ng-click="currentAdd(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps); getCurrentData()">Save Lifts</button>
+      </div>
+    </div>
+   
+
+  <div class="row">
+    <div  class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <div class="row placeholders">
+        <div class="col-xs-3 col-sm-3 placeholder">
+        </div>
+
+      </div>
+      <h2 class="sub-header">Workout Entry List</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Reps</th>
+              <th>Deadlift</th>
+              <th>Pendlay Row</th>
+              <th>Back Squat</th>
+              <th>Front Squat</th>
+              <th>Bench Press</th>
+              <th>Incline Press</th>
+              <th>Shoulder Press</th>
+              <th>Bicep Curl</th>
+              <th>Tricep Curl</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="items in displayCurrent | orderBy: '-dates'"
+            ng-hide="(($index < (displayCurrent.page * displayCurrent.numRecords))
+            && ($index >= ((displayCurrent.page - 1) * displayCurrent.numRecords)))">
+              <th>{{items.dates | date: 'longDate'}}</th>
+              <th>{{items.dates | date: 'shortTime'}}</th>
+              <th>{{items.reps}}</th>
+              <th>{{items.deadlift}}</th>
+              <th>{{items.pendlayrow}}</th>
+              <th>{{items.backsquat}}</th>
+              <th>{{items.frontsquat}}</th>
+              <th>{{items.benchpress}}</th>
+              <th>{{items.inclinebench}}</th>
+              <th>{{items.shoulderpress}}</th>
+              <th>{{items.bicepcurl}}</th>
+              <th>{{items.tricepcurl}}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <form>
+        <button class="btn-primary" ng-click="back()">Prev</button>
+        <button class="btn-primary" ng-click="next()">Next</button>
+    </form>
+    </div>
   </div>
-</div>
-
-    <div class="row">
-      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <div class="row placeholders">
-          <div class="col-xs-3 col-sm-3 placeholder">
-          </div>
-
-        </div>
-        <h2 class="sub-header">Enter Your Best Lifts For The Day</h2>
-        <div class="table-responsive">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Reps</th>
-                <th>Deadlift</th>
-                <th>Pendlay Row</th>
-                <th>Back Squat</th>
-                <th>Front Squat</th>
-                <th>Bench Press</th>
-                <th>Incline Press</th>
-                <th>Shoulder Press</th>
-                <th>Bicep Curl</th>
-                <th>Tricep Curl</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th><input type="number" min="1" max="2000" placeholder="" ng-model="reps"></th>
-                <th><input type="number" min="1" max="2000" placeholder="" ng-model="deadlift"></th>
-                <th><input type="number" min="1" max="2000" placeholder="" ng-model="pendlayrow"></th>
-                <th><input type="number" min="1" max="2000" placeholder="" ng-model="backsquat"></th>
-                <th><input type="number" min="1" max="2000" placeholder="" ng-model="frontsquat"></th>
-                <th><input type="number" min="1" max="2000" placeholder="" ng-model="benchpress"></th>
-                <th><input type="number" min="1" max="2000" placeholder="" ng-model="inclinebench"></th>
-                <th><input type="number" min="1" max="2000" placeholder="" ng-model="shoulderpress"></th>
-                <th><input type="number" min="1" max="2000" placeholder="" ng-model="bicepcurl"></th>
-                <th><input type="number" min="1" max="2000" placeholder="" ng-model="tricepcurl"></th>
-              </tr>
-            </tbody>
-          </table>
-          <button class="btn-primary" ng-click="currentAdd(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps); getCurrentData()">Save Lifts</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <div class="row placeholders">
-          <div class="col-xs-3 col-sm-3 placeholder">
-          </div>
-
-        </div>
-        <h2 class="sub-header">Workout Entry List</h2>
-        <div class="table-responsive">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Reps</th>
-                <th>Deadlift</th>
-                <th>Pendlay Row</th>
-                <th>Back Squat</th>
-                <th>Front Squat</th>
-                <th>Bench Press</th>
-                <th>Incline Press</th>
-                <th>Shoulder Press</th>
-                <th>Bicep Curl</th>
-                <th>Tricep Curl</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="items in displayCurrent | orderBy: '-dates'"
-              ng-show="(($index < (displayCurrent.page * displayCurrent.numRecords))
-              && ($index >= ((displayCurrent.page - 1) * displayCurrent.numRecords)))">
-                <th>{{items.dates | date: 'longDate'}}</th>
-                <th>{{items.dates | date: 'shortTime'}}</th>
-                <th>{{items.reps}}</th>
-                <th>{{items.deadlift}}</th>
-                <th>{{items.pendlayrow}}</th>
-                <th>{{items.backsquat}}</th>
-                <th>{{items.frontsquat}}</th>
-                <th>{{items.benchpress}}</th>
-                <th>{{items.inclinebench}}</th>
-                <th>{{items.shoulderpress}}</th>
-                <th>{{items.bicepcurl}}</th>
-                <th>{{items.tricepcurl}}</th>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <form>
-          <button class="btn-primary" ng-click="back()">Prev</button>
-          <button class="btn-primary" ng-click="next()">Next</button>
-      </form>
-      </div>
-    </div>
+  
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
