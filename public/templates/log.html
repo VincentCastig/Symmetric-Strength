@@ -144,7 +144,7 @@
           </thead>
           <tbody>
             <tr ng-repeat="items in displayCurrent | orderBy: '-dates'"
-            ng-hide="(($index < (displayCurrent.page * displayCurrent.numRecords))
+            ng-show="(($index < (displayCurrent.page * displayCurrent.numRecords))
             && ($index >= ((displayCurrent.page - 1) * displayCurrent.numRecords)))">
               <th>{{items.dates | date: 'longDate'}}</th>
               <th>{{items.dates | date: 'shortTime'}}</th>
@@ -168,5 +168,3 @@
     </form>
     </div>
   </div>
-  
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
