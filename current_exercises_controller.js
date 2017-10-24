@@ -3,10 +3,10 @@ module.exports = {
     const dbInstance = req.app.get('db');
     console.log("Vincent is accessing the create method in current_controller.js")
 
-    const { frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps } = req.body;
-    console.log(reps)
+    const { frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, deadliftreps, pendlayrowreps, backsquatreps, frontsquatreps, benchpressreps, inclinebenchreps, shoulderpressreps, bicepcurlreps, tricepcurlreps } = req.body;
+    console.log(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, deadliftreps, pendlayrowreps, backsquatreps, frontsquatreps, benchpressreps, inclinebenchreps, shoulderpressreps, bicepcurlreps, tricepcurlreps )
     console.log("USER BEFORE CREATE EXERCISE",req.user)
-    dbInstance.create_exercises([ frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps, req.user[0].authid ])
+    dbInstance.create_exercises([ frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, req.user[0].authid, deadliftreps, pendlayrowreps, backsquatreps, frontsquatreps, benchpressreps, inclinebenchreps, shoulderpressreps, bicepcurlreps, tricepcurlreps ])
 
       .then( (response) => res.status(200).send(response) )
       .catch( (err) => res.status(500).send(err) );

@@ -123,8 +123,8 @@ $scope.updateMyChartData = function(val, name) {
     $scope.currentDelete = function(id) {
         currentService.deleteData(id)
     }
-    $scope.currentAdd = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps) {
-        currentService.addCurrentData(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, reps)
+    $scope.currentAdd = function(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, deadliftreps, pendlayrowreps, backsquatreps, frontsquatreps, benchpressreps, inclinebenchreps, shoulderpressreps, bicepcurlreps, tricepcurlreps) {
+        currentService.addCurrentData(frontsquat, backsquat, pendlayrow, deadlift, shoulderpress, inclinebench, benchpress, bicepcurl, tricepcurl, deadliftreps, pendlayrowreps, backsquatreps, frontsquatreps, benchpressreps, inclinebenchreps, shoulderpressreps, bicepcurlreps, tricepcurlreps)
     }
     $scope.currentCalculator = function(val, name) {
       $scope.currentExercises = currentService.calculator(val,name)

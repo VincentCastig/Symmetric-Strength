@@ -3,7 +3,7 @@ angular.module("myApp").service("goalService", function($http) {
   this.getRegisterData = function() {
       return $http({
           method: "GET",
-          url: 'http://vintruv.herokuapp.com/api/user'
+          url: 'http://localhost:3000/api/user'
       }).then(function(response) {
           return response.data;
       })
@@ -11,7 +11,7 @@ angular.module("myApp").service("goalService", function($http) {
     this.getGoalData = function() {
         return $http({
             method: "GET",
-            url: 'http://vintruv.herokuapp.com/api/goals'
+            url: 'http://localhost:3000/api/goals'
         }).then(function(response) {
             return response.data;
         })
@@ -19,19 +19,19 @@ angular.module("myApp").service("goalService", function($http) {
     this.updateData = function(id,desc) {
         return $http({
             method: "PUT",
-            url: 'http://vintruv.herokuapp.com/api/goal/' + id + "?desc=" + desc
+            url: 'http://localhost:3000/api/goal/' + id + "?desc=" + desc
         })
     }
     this.deleteData = function(id) {
         return $http({
             method: "DELETE",
-            url: 'http://vintruv.herokuapp.com/api/goal/' + id
+            url: 'http://localhost:3000/api/goal/' + id
         })
     }
     this.addData = function(name,desc,price,img) {
         return $http({
             method: "POST",
-            url: 'http://vintruv.herokuapp.com/api/goal/',
+            url: 'http://localhost:3000/api/goal/',
             data: {"name" : name, "description" : desc, "price" : price, "imageurl" : img}
         })
     }
