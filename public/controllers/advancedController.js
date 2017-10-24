@@ -1,5 +1,42 @@
 angular.module("myApp").controller('advancedController', function(goalService, currentService, $scope) {
 
+  $scope.isActive = false;
+  $scope.activeButton = function(val) {
+    if(val === 1) {
+    $scope.allActive = false;
+    $scope.noneActive = false;
+    $scope.legsActive = false;
+    $scope.backActive = false;
+    $scope.chestActive = false;
+    $scope.armsActive = false;
+    $scope.shouldersActive = false;
+    }
+    else if(val === 2) {
+      $scope.legsActive = !$scope.legsActive;
+    }
+    else if(val === 3) {
+      $scope.backActive = !$scope.backActive;
+    }
+    else if(val === 4) {
+      $scope.chestActive = !$scope.chestActive;
+    }
+    else if(val === 5) {
+      $scope.armsActive = !$scope.armsActive;
+    }
+    else if(val === 6){
+      $scope.shouldersActive = !$scope.shouldersActive;
+    }
+    else {
+      $scope.allActive = true;
+      $scope.noneActive = true;
+      $scope.legsActive = true;
+      $scope.backActive = true;
+      $scope.chestActive = true;
+      $scope.armsActive = true;
+      $scope.shouldersActive = true;
+
+    }
+  }  
 
   $scope.getCurrentData = function() {
     currentService.getCurrentData().then(function(response) {

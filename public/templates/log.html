@@ -14,33 +14,38 @@
           <div class='col-sm-3 col-md-2 sidebar'>
             <ul  class="nav nav-sidebar">
                 <li  class="active">
-                    <a ng-click="backs=false; legs=false; chest=false; shoulders=false; arms=false" href="">
+                    <a ng-click="backs=false; legs=false; chest=false; shoulders=false; arms=false; activeButton(1)" ng-class="{'opacitySideBar': allActive}" href="">
                       All<span class="sr-only"(current)></span>
                     </a>
                   </li>
               <li  class="active">
-                <a ng-click="legs=!legs;" href="">
+                <a ng-click="legs=!legs; activeButton(2)" ng-class="{'opacitySideBar': legsActive}" href="">
                   Legs<span class="sr-only"(current)></span>
                 </a>
               </li>
               <li class="active">
-                  <a ng-click="backs=!backs;" href="">
+                  <a ng-click="backs=!backs; activeButton(3)" ng-class="{'opacitySideBar': backActive}" href="">
                     Back
                   </a>
               </li>
               <li class="active">
-                  <a ng-click="chest=!chest;" href="">
+                  <a ng-click="chest=!chest; activeButton(4)" ng-class="{'opacitySideBar': chestActive}" href="">
                     Chest
                   </a>
               </li>
               <li class="active">
-                  <a ng-click="arms=!arms;" href="">
+                  <a ng-click="arms=!arms; activeButton(5)" ng-class="{'opacitySideBar': armsActive}" href="">
                     Arms
                   </a>
               </li>
               <li class="active">
-                  <a ng-click="shoulders=!shoulders;" href="">
-                    Shoulders/Traps
+                  <a ng-click="shoulders=!shoulders; activeButton(6)" ng-class="{'opacitySideBar': shouldersActive}" href="">
+                    Shoulders
+                  </a>
+              </li> 
+              <li class="active">
+                  <a ng-click="backs=true; legs=true; chest=true; shoulders=true; arms=true; activeButton(7)" ng-class="{'opacitySideBar': noneActive}" href="">
+                    None
                   </a>
               </li>     
             </ul>

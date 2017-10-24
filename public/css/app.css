@@ -1905,6 +1905,10 @@ pre {
   .col-md-10 {
     width: 83.33333%; }
 
+    .opacitySideBar {
+      opacity: .4;
+    }
+    
   .col-md-11 {
     width: 91.66667%; }
 
@@ -3588,7 +3592,7 @@ tbody.collapse.in {
       left: 0;
       z-index: 1000;
       display: block;
-      padding: 20px;
+      /* padding: 20px; */
       overflow-x: hidden;
       overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
       background-color: #f5f5f5;
@@ -3601,12 +3605,12 @@ tbody.collapse.in {
     margin-right: -21px; /* 20px padding + 1px border */
     margin-bottom: 20px;
     margin-left: -20px;
-    background-color: #15f5f5;
+    /* background-color: #15f5f5; */
   }
   .nav-sidebar > li > a {
     padding-right: 20px;
     padding-left: 20px;
-    background-color: #15f5f5;
+    /* background-color: #15f5f5; */
   }
   .nav-sidebar > .active > a,
   .nav-sidebar > .active > a:hover,
