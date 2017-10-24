@@ -4,9 +4,9 @@ angular.module("myApp").controller('advancedController', function(goalService, c
   $scope.getCurrentData = function() {
     currentService.getCurrentData().then(function(response) {
       if(response){
-    $scope.displayCurrent = response;
-    $scope.next = response.next;
-    $scope.back = response.back;
+        $scope.displayCurrent = response;
+        $scope.next = response.next;
+        $scope.back = response.back;
       }
   })
   .catch(function() {
