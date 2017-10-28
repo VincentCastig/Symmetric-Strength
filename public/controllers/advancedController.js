@@ -120,7 +120,7 @@ $scope.updateMyChartData = function(val, name) {
   $scope.updateMyCurrentChartData = function() {
 
         currentService.getLastCurrent().then(function(response) {
-          console.log(response[0]);
+          console.log('getting last', response[0]);
           $scope.dataSource1.data[1].label = "Deadlift";
           $scope.dataSource1.data[1].value = response[0].deadlift;
           $scope.dataSource3.data[1].label = "PendlayRow";
@@ -141,7 +141,7 @@ $scope.updateMyChartData = function(val, name) {
           $scope.dataSource17.data[1].value = response[0].tricepcurl;
       })
       currentService.getLastFiveCurrent().then(function(response) {
-        console.log(response);
+        console.log('getting last five', response);
         $scope.dataSource2.data = response.deadlift;
         $scope.dataSource4.data = response.pendlayrow;
         $scope.dataSource6.data = response.backsquat;

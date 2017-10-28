@@ -31,7 +31,7 @@ module.exports = {
 
   getAll: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
-
+    console.log("getting lastfive")
     dbInstance.read_exercises(req.user[0].authid)
       .then( response => res.status(200).send( response ) )
       .catch( () => res.status(500).send(req.body) );
