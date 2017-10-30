@@ -46,15 +46,17 @@ passport.use(new Auth0Strategy({
   function(accessToken, refreshToken, extraParams, profile, done) {
     //Find user in database
     const db = app.get('db')
-    
+    const user_id = profile.identities[0].user_id.toString()
 
-    db.getUserByAuthId([profile.identities[0].user_id]).then((user) => {
+    db.getUserByAuthId([user_id]).then((user) => {
       console.log("user", user.length)
       console.log("the user", user)
       if (user.length < 1) { //if there isn't one, we'll create one!
-        console.log('CREATING USER');
-        db.createUserByAuth([ profile.nickname, profile.identities[0].user_id]).then((user) => {
-          console.log('USER CREATED', user[0]);
+        console.log('CREATING USER', profile);
+        
+        db.createUserByAuth([ profile.nickname, user_id]).then((user) => {
+          console.log('USER CREATED user[0]', user[0]);
+          console.log('USER CREATED user', user_id);
           return done(null, user[0]); // GOES TO SERIALIZE USER
         })
       }
