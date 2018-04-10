@@ -105,7 +105,7 @@ app.get('/auth/me', (req, res) => {
 app.get('/auth/logout', (req, res) => {
   console.log('logging out?:' )
   req.logout();
-  res.redirect('https://vintruv-fitness.herokuapp.com');
+  res.redirect('https://vintruv-fitness.herokuapp.com:3000');
   //
   // http://vincentcastig.auth0.com/v2/logout
   // https://YOUR_AUTH0_DOMAIN/v2/logout
@@ -115,25 +115,25 @@ app.get('/auth/logout', (req, res) => {
 
 
 
-app.post('/api/exercise', current_exercises_controller.create)
-app.get('/api/exercises', current_exercises_controller.getAll)
-app.get('/api/exercise/:id', current_exercises_controller.getOne)
-app.get('/api/lastexercise', current_exercises_controller.getLast)
-app.put('/api/exercise/:id', current_exercises_controller.update)
-app.delete('/api/exercise/:id', current_exercises_controller.delete)
+app.post('https://vintruv-fitness.herokuapp.com/api/exercise', current_exercises_controller.create)
+app.get('https://vintruv-fitness.herokuapp.com/api/exercises', current_exercises_controller.getAll)
+app.get('https://vintruv-fitness.herokuapp.com/api/exercise/:id', current_exercises_controller.getOne)
+app.get('https://vintruv-fitness.herokuapp.com/api/lastexercise', current_exercises_controller.getLast)
+app.put('https://vintruv-fitness.herokuapp.com/api/exercise/:id', current_exercises_controller.update)
+app.delete('https://vintruv-fitness.herokuapp.com/api/exercise/:id', current_exercises_controller.delete)
 
 //post exercise goal on registration
-app.post('/api/goal', goal_exercises_controller.create)
-app.get('/api/goals', goal_exercises_controller.getAll)
-app.get('/api/goal/:id', goal_exercises_controller.getOne)
-app.put('/api/goal/:id', goal_exercises_controller.update)
-app.delete('/api/goal/:id', goal_exercises_controller.delete)
+app.post('https://vintruv-fitness.herokuapp.com/api/goal', goal_exercises_controller.create)
+app.get('https://vintruv-fitness.herokuapp.com/api/goals', goal_exercises_controller.getAll)
+app.get('https://vintruv-fitness.herokuapp.com/api/goal/:id', goal_exercises_controller.getOne)
+app.put('https://vintruv-fitness.herokuapp.com/api/goal/:id', goal_exercises_controller.update)
+app.delete('https://vintruv-fitness.herokuapp.com/api/goal/:id', goal_exercises_controller.delete)
 
 //register user
-app.post('/api/user', user_controller.create)
-app.get('/api/users', user_controller.getAll)
+app.post('https://vintruv-fitness.herokuapp.com/api/user', user_controller.create)
+app.get('https://vintruv-fitness.herokuapp.com/api/users', user_controller.getAll)
 //login user and find user by username
-app.get('/api/user/:username/:password', user_controller.getUser)
+app.get('https://vintruv-fitness.herokuapp.com/api/user/:username/:password', user_controller.getUser)
 
 app.listen(process.env.PORT, () => {
   console.log(`Hey dude, I'm listening`)
