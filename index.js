@@ -111,7 +111,7 @@ app.get('/auth/logout', (req, res) => {
   console.log('logging out res?:', res.user )
   console.log('logging out?:', req.user )
   req.logout();
-  res.redirect('https://vintruv-fitness.herokuapp.com');
+  res.redirect('http://vintruv-fitness.herokuapp.com');
   //
   // http://vincentcastig.auth0.com/v2/logout
   // https://YOUR_AUTH0_DOMAIN/v2/logout
