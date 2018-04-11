@@ -92,6 +92,7 @@ app.get('/auth', passport.authenticate('auth0'));
 
 app.get('/auth/callback',
   passport.authenticate('auth0', {successRedirect: '/#!/basic'}), function(req, res) {
+    console.log('callback')
     res.status(200).send(req.user);
 })
 
@@ -103,9 +104,9 @@ app.get('/auth/me', (req, res) => {
 })
 
 app.get('/auth/logout', (req, res) => {
-  console.log('logging out?:' )
+  console.log('logging out res?:', res.user )
+  console.log('logging out?:', req.user )
   req.logout();
-  // res.redirect('http://localhost:3000');
   res.redirect('https://vintruv-fitness.herokuapp.com');
   //
   // http://vincentcastig.auth0.com/v2/logout

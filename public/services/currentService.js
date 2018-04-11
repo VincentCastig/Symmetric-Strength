@@ -4,7 +4,7 @@ angular.module("myApp").service("currentService", function($http) {
         return $http({
             method: "GET",
             url: 'https://vintruv-fitness.herokuapp.com/api/exercises'
-            // url: 'http://localhost:3000/api/exercises'
+            // url: 'https://vintruv-fitness.herokuapp.com/api/exercises'
         }).then(function(response) {
             response.data.numRecords = 10;
             response.data.page = 1;
