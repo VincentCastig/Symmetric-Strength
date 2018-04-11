@@ -41,12 +41,16 @@ passport.use(new Auth0Strategy({
    domain:       process.env.domain,
    clientID:     process.env.clientID,
    clientSecret: process.env.clientSecret,
-   callbackURL:  '/auth/callback'
+   callbackURL:  '/auth/callback',
+   scope: 'openid profile email',
  },
   function(accessToken, refreshToken, extraParams, profile, done) {
     //Find user in database
     const db = app.get('db')
-    const user_id = profile.identities[0].user_id.toString()
+    console.log('profile', profile);
+
+    const id = profile.id.toString()
+    const user_id = id.slice(6,id.length);
 
     db.getUserByAuthId([user_id]).then((user) => {
       console.log("user", user.length)
