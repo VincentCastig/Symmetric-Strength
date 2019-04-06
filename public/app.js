@@ -26,7 +26,7 @@ angular.module("myApp", ['ui.router', 'ng-fusioncharts'])
       })
       .state('log', {
         url: '/log',
-        templateUrl: './templates/log.html',
+        templateUrl: './templates/workoutLog.html',
         controller: 'advancedController'
       })
       .state('basic', {

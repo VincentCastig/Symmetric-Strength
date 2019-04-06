@@ -1,33 +1,33 @@
 <div class="jumbotron">
   <div class="container">
-    <img src="images/dist/images/noun_30259_cc.png" width="200" height="200"alt="">
-    <h1 class="">Strength Calculator</h1>
+    <!-- <img src="images/dist/images/vintruvIcon.png" width="100" height="100"alt=""> -->
+    <div class="container">
+      <form class="form-inline"  method="post">
+        <h2 class="form-signin-heading">Calculate Your Ideal Strengths</h2>
+        <div class="form-group">
+          <label for="email">Exercise: </label>
+          <select ng-model="exerciseName" ng-options="x for x in vehicles">
+            <option value="" disabled selected>Select Your Exercise</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Weight: </label>
+            <input type="number" min="1" max="2000" placeholder="Enter Weight" ng-model="weight">
+            <label for="email">Repetitions: </label>
+        </div>    
+        <div class="form-group">    
+            <select ng-model="reps" name="Repetitions" ng-options="x for x in repetitions">
+              <option value="" disabled selected>Select Your Repetitions</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" ng-click= "calculator(weight, exerciseName)">Calculate</button>    
+      </div>
+      </form>
+    </div>
   </div>
 </div>
 
-<div class="container">
-  <form class="form-inline"  method="post">
-    <h2 class="form-signin-heading">Calculate Your Ideal Strengths</h2>
-    <div class="form-group">
-      <label for="email">Exercise: </label>
-      <select ng-model="exerciseName" ng-options="x for x in vehicles">
-        <option value="" disabled selected>Select Your Exercise</option>
-      </select>
-    </div>
-    <div class="form-group">
-        <label for="email">Weight: </label>
-        <input type="number" min="1" max="2000" placeholder="Enter Weight" ng-model="weight">
-        <label for="email">Repetitions: </label>
-    </div>    
-    <div class="form-group">    
-        <select ng-model="reps" name="Repetitions" ng-options="x for x in repetitions">
-          <option value="" disabled selected>Select Your Repetitions</option>
-        </select>
-    </div>
-    <button class="btn btn-primary" ng-click= "calculator(weight, exerciseName)">Calculate</button>    
-  </div>
-  </form>
-</div>
+
 
 
 <div class="container-fluid">

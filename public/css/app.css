@@ -1074,10 +1074,13 @@ body {
   font-size: 14px;
   line-height: 1.42857;
   color: #000;
-  background-color: #fff; }
+  background: url('/images/backdropPhoto.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+} 
 
 input,
-button,
+button, 
 select,
 textarea {
   font-family: inherit;
@@ -4689,7 +4692,7 @@ a.badge:hover, a.badge:focus {
   padding-bottom: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #ec8d1b; }
+  background-color: #acacac; }
 
 .jumbotron h1,
 .jumbotron .h1 {
@@ -6219,6 +6222,13 @@ button.close {
 .visible-lg-inline,
 .visible-lg-inline-block {
   display: none !important; }
+
+.vintruv-icon {
+  filter: invert(100%);
+  padding: 1px;
+  height: 50px;
+  widows: auto;
+}
 
 @media (max-width: 767px) {
   .visible-xs {
