@@ -1077,6 +1077,7 @@ body {
   background: url('/images/backdropPhoto.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 } 
 
 input,
@@ -1930,7 +1931,14 @@ pre code {
     width: 83.33333%; }
 
   .opacitySideBar {
-    opacity: .4; }
+    
+    opacity: .4; 
+  }
+
+  .opacitySideBar form {
+    position: relative;
+    top: 4.7em;
+  }
 
   .col-md-11 {
     width: 91.66667%; }
@@ -2483,6 +2491,7 @@ output {
 
   .workoutImg {
     background: floralwhite;
+    width: fit-content;
     margin: 10px;
     padding: 1px;
   }
@@ -2879,7 +2888,7 @@ select[multiple].input-lg,
 @media (min-width: 768px) {
   .form-inline .form-group {
     display: inline-block;
-    margin-bottom: 0;
+    margin-bottom: 10;
     vertical-align: middle; }
 
   .form-inline .form-control {
@@ -3753,7 +3762,8 @@ tbody.collapse.in {
  */
 /* Hide for mobile, show later */
 .sidebar {
-  display: none; }
+  display: none; 
+}
 
 @media (min-width: 768px) {
   .sidebar {
@@ -3767,7 +3777,8 @@ tbody.collapse.in {
     overflow-x: hidden;
     overflow-y: auto;
     /* Scrollable contents if viewport is shorter than content. */
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
+    background-color:rgba(169, 173, 172, 0.7);
     border-right: 1px solid #eee; } }
 /* Sidebar navigation */
 .nav-sidebar {
@@ -4353,7 +4364,9 @@ tbody.collapse.in {
 
 .navbar-inverse {
   background-color: #222;
-  border-color: #090909; }
+  /* border-color: #090909;  */
+  border-bottom: darkgray solid 8px;
+}
 
 .navbar-inverse .navbar-brand {
   color: white; }
@@ -4366,6 +4379,7 @@ tbody.collapse.in {
   color: white; }
 
 .navbar-inverse .navbar-nav > li > a {
+
   color: white; }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
@@ -4772,6 +4786,10 @@ a.thumbnail.active {
 
 .alert .alert-link {
   font-weight: bold; }
+
+  ul > li > a {
+    color: #000;
+  }
 
 .alert > p,
 .alert > ul {
