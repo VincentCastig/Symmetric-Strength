@@ -3797,7 +3797,9 @@ tbody.collapse.in {
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
   color: #fff;
-  background-color: #428bca; }
+  /* background-color: #428bca;  */
+  font-size: x-large;
+}
 
 /*
  * Main content
@@ -4386,6 +4388,13 @@ tbody.collapse.in {
   color: #fff;
   background-color: transparent; }
 
+.navbar-inverse .navbar-nav > li > p {
+  color: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+} 
+
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
   color: #fff;
   background-color: #090909; }
@@ -4701,6 +4710,22 @@ a.label:hover, a.label:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px; }
 
+.aboutText{
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: left;
+  padding: 20px;
+  margin: 10px;
+}
+.about-vintruv{
+  text-align: center;
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form-signin-heading{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 a.badge:hover, a.badge:focus {
   color: #fff;
   text-decoration: none;
@@ -4711,11 +4736,17 @@ a.badge:hover, a.badge:focus {
   padding-bottom: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #acacac; }
+  /* background-color: #acacac;  */
+}
 
 .jumbotron h1,
 .jumbotron .h1 {
-  color: #000; }
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  background-color: rgba(29, 29, 29, 1);
+  /* color: #f88b00; */
+  color: white;
+} 
 
 .jumbotron p {
   margin-bottom: 15px;
@@ -4725,10 +4756,20 @@ a.badge:hover, a.badge:focus {
 .jumbotron > hr {
   border-top-color: #c47210; }
 
+  .workout-container {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
 .container .jumbotron, .container-fluid .jumbotron {
   border-radius: 6px;
   padding-left: 15px;
   padding-right: 15px; }
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
 
 .jumbotron .container {
   max-width: 100%; }

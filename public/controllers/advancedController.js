@@ -46,8 +46,8 @@ angular.module("myApp").controller('advancedController', function(goalService, c
         $scope.back = response.back;
       }
   })
-  .catch(function() {
-    console.log('error')
+  .catch(function(error) {
+    console.log('error ', error)
     })
   }
       $scope.dataSource1 = currentService.dataSource1;
@@ -170,6 +170,7 @@ $scope.updateMyChartData = function(val, name) {
 
 
     $scope.registerData = function() {
+      console.log('registerData');
         goalService.getRegisterData().then(function(response) {
           console.log(response)
         $scope.displayUser = response;
@@ -178,6 +179,7 @@ $scope.updateMyChartData = function(val, name) {
     }
 
       $scope.getGoalData = function() {
+        console.log('getGoalData ');
           goalService.getGoalData().then(function(response) {
 
           $scope.displayGoalSymmetry = response;

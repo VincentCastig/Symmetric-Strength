@@ -1,8 +1,9 @@
  //create goal exercises/, postgoal on login,
-  angular.module('myApp')
-  .service('userService', function($http) {
+  angular.module('myApp').service('userService', function($http) {
+
     this.register = function(username, password, confirmpassword) {
       //creat username
+      console.log('username ', username);
 
       if(username.length < 3){
         alert("Username must be equal to or greater than 6 characters.")
@@ -25,8 +26,8 @@
         console.log('ERROR LOGGING IN!', err);
       })
     }
+
     this.addGoalData = function(username) {
-      console.log("service addGoalData " + username)
         return $http({
             method: "POST",
             url: 'http://vintruv-fitness.herokuapp.com/api/goal/',
@@ -35,11 +36,10 @@
         .then(function(res) {
           return res.data;
         })
-    }
+    };
 
-    this.login = function(username, password) {
+    this.login = function() {
       //find user via login
-      
       return $http({
         method: 'GET',
         url: 'http://vintruv-fitness.herokuapp.com/api/user/'

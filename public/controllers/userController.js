@@ -7,20 +7,19 @@ angular.module('myApp').controller('userController', function(userService, $scop
       userService.addGoalData(username)
       .then(function (response) {
               console.log("scope.addGoalData")
-              console.log(response)
       })
-      $scope.username = username
+      $scope.username = username;
       $state.go('login')
   }
-  console.log("getdata")
 
-  
+  $scope.getUserData = function() {
+      userService.login()
+      .then(function (response) {
+              $scope.username = response[0].username;
+      });
+
+};
+$scope.getUserData();
 
 });
 
-/*$scope.data = function() {
-    service.getData().then(function(response) {
-      console.log("controller.js - displaySymmetry")
-    $scope.displaySymmetry = response;
-
-  }); */

@@ -102,6 +102,7 @@ app.get('/auth/callback',
 
 app.get('/auth/me', (req, res) => {
   console.log(req.user)
+  var user = req.user;
   if (!req.user) return res.sendStatus(404);
   //THIS IS WHATEVER VALUE WE GOT FROM userC variable above.
   res.status(200).send(req.user);
@@ -118,7 +119,6 @@ app.get('/auth/logout', (req, res) => {
 })
 
 //app.use means we are using some middleware
-
 
 
 app.post('/api/exercise', current_exercises_controller.create)
@@ -139,7 +139,7 @@ app.delete('/api/goal/:id', goal_exercises_controller.delete)
 app.post('/api/user', user_controller.create)
 app.get('/api/users', user_controller.getAll)
 //login user and find user by username
-app.get('/api/user/:username/:password', user_controller.getUser)
+app.get('/api/user', user_controller.getUser)
 
 app.listen(process.env.PORT, () => {
   console.log(`Hey dude, I'm listening`)

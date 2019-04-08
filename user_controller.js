@@ -5,9 +5,6 @@ module.exports = {
     const dbInstance = req.app.get('db');
     const { username, password } = req.body
 
-// console.log(username)
-// console.log(password)
-
     dbInstance.create_user([ username, password ])
 
       .then( (response) => {
@@ -17,11 +14,9 @@ module.exports = {
   },
 
   getUser: ( req, res, next ) => {
-    console.log('user_controller.js getuser')
     const dbInstance = req.app.get('db');
-    const { params } = req
-    console.log(params)
-    dbInstance.getUserById([ params.username, params.password ])
+    
+    dbInstance.getUserByAuthId(req.user[0].authid)
       .then( (username) => {
         res.status(200).send( username );
     })

@@ -16,6 +16,8 @@ module.exports = {
     const dbInstance = req.app.get('db');
     const { params } = req;
 
+    console.log('getting one ', params);
+
     dbInstance.read_exercise([ userid  ])
       .then( response => res.status(200).send( response ) )
       .catch( () => res.status(500).send() );
@@ -32,6 +34,7 @@ module.exports = {
   getAll: ( req, res, next ) => {
     const dbInstance = req.app.get('db');
     console.log("getting lastfive")
+    console.log(req.user[0]);
     dbInstance.read_exercises(req.user[0].authid)
       .then( response => res.status(200).send( response ) )
       .catch( () => res.status(500).send(req.body) );
