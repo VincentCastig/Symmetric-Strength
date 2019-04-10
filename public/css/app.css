@@ -2885,6 +2885,8 @@ select[multiple].input-lg,
   margin-bottom: 10px;
   color: #404040; }
 
+  
+
 @media (min-width: 768px) {
   .form-inline .form-group {
     display: inline-block;
@@ -3820,6 +3822,11 @@ tbody.collapse.in {
 .placeholders {
   margin-bottom: 30px;
   text-align: center; }
+
+@media (max-width: 470px) {
+  .placeholders > div{
+  width:  100%;
+}}
 
 .placeholders h4 {
   margin-bottom: 0; }
