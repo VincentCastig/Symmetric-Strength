@@ -3369,7 +3369,7 @@ output {
   color: #000; }
 
   .workoutImg {
-    background: floralwhite;
+    background: #ffc081;
     width: fit-content;
     margin: 10px;
     padding: 1px;
@@ -4640,9 +4640,23 @@ tbody.collapse.in {
  * Sidebar
  */
 /* Hide for mobile, show later */
+@media (max-width: 768px) {
 .sidebar {
-  display: none; 
-}
+  // display: none; 
+  padding: 0px;
+  left: auto;
+  right: auto;
+  text-align: center;
+  margin-right: -30px;
+  margin-left: -30px;
+  //width: 100%;
+  background-color:rgba(251, 251, 251, 0.99);;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 65px;
+  //border: #c5c5c5 solid 10px;
+}}
 
 @media (min-width: 768px) {
   .sidebar {
@@ -4976,8 +4990,10 @@ tbody.collapse.in {
 .navbar-brand {
   float: left;
   padding: 15px 15px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 20px;
+  font-weight: 500;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   height: 50px; }
 
 .navbar-brand:hover, .navbar-brand:focus {
@@ -5251,7 +5267,7 @@ tbody.collapse.in {
 .navbar-inverse {
   background-color: #222;
   /* border-color: #090909;  */
-  border-bottom: darkgray solid 8px;
+  border-bottom: #ffc081 solid 8px;
 }
 
 .navbar-inverse .navbar-brand {
