@@ -24,7 +24,7 @@
     "gulp-imagemin": "^3.3.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "node-sass -w public/sass/app.scss -o public/css/ recursive"
   },
   "repository": {
     "type": "git",
