@@ -2319,7 +2319,7 @@ output {
   color: #000; }
 
 .workoutImg {
-  background: #ffc081;
+  background: white;
   width: fit-content;
   margin: 10px;
   padding: 1px; }
@@ -4199,7 +4199,7 @@ tbody.collapse.in {
 .navbar-inverse {
   background-color: #222;
   /* border-color: #090909;  */
-  border-bottom: #ffc081 solid 8px; }
+  border-bottom: #aeadac solid 8px; }
 
 .navbar-inverse .navbar-brand {
   color: white; }
