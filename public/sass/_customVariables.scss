@@ -4671,8 +4671,11 @@ tbody.collapse.in {
     overflow-y: auto;
     /* Scrollable contents if viewport is shorter than content. */
     /* background-color: #f5f5f5; */
-    background-color:rgba(169, 173, 172, 0.7);
+    background-color:rgba(244, 244, 244, 0.90);
     border-right: 1px solid #eee; } }
+  .sidebar-basic{
+
+    }
 /* Sidebar navigation */
 .nav-sidebar {
   margin-right: -21px;
@@ -4689,9 +4692,14 @@ tbody.collapse.in {
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
-  color: #fff;
+  // color: #fff;
   /* background-color: #428bca;  */
   font-size: x-large;
+}
+.advanced-container{
+  background-color:rgba(244, 244, 244, 0.90);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /*
@@ -5623,7 +5631,7 @@ a.label:hover, a.label:focus {
 }
 
 .form-signin-heading{
-  background-color: rgba(255, 255, 255, 0.9);
+  //background-color: rgba(255, 255, 255, 0.9);
 }
 
 a.badge:hover, a.badge:focus {
